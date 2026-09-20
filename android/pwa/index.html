@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سفارش خدمات اینترنتی</title>
+<meta name="description" content="سفارش آنلاین خدمات کافی‌نت: ثبت‌نام سامانه‌های دولتی، کنکور، امور قضایی، بیمه و بانک، چاپ و تایپ — با قیمت‌های نرخنامهٔ اتحادیه.">
+<meta name="theme-color" content="#161F3D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+
+/* ============ کاشی‌کاری: نظام طراحی ============ */
+:root{
+  /* رنگ‌ها — برگرفته از کاشی ایرانی: لاجورد، فیروزه، زر، شنگرف */
+  --ink:#151E3C; --lapis:#22407F; --lapis-d:#161F3D; --lapis-l:#3A62B4;
+  --firouzeh:#0F7F79; --firouzeh-l:#15A096;
+  --zar:#BE8A2C; --zar-l:#E0AA4A;
+  --shangarf:#9E3B34;
+  --paper:#F6F2EA; --surface:#FFFDF9; --surface-2:#EFE9DD; --surface-3:#E6DFD1;
+  --muted:#5A6178; --line:rgba(21,30,60,.13); --line-soft:rgba(21,30,60,.06);
+  --r-xs:10px; --r-sm:14px; --r:20px; --r-lg:28px; --r-xl:34px;
+  --sh-1:0 1px 1.5px rgba(21,30,60,.05);
+  --sh-2:0 2px 4px rgba(21,30,60,.05), 0 14px 28px -18px rgba(21,30,60,.35);
+  --sh-3:0 4px 10px rgba(21,30,60,.07), 0 32px 60px -28px rgba(21,30,60,.45);
+  --sh-in:inset 0 1px 0 rgba(255,255,255,.6);
+  --t0:clamp(.95rem,.92rem+.2vw,1.04rem);
+  --t1:clamp(1.1rem,1rem+.5vw,1.34rem);
+  --t2:clamp(1.4rem,1.2rem+1vw,2rem);
+  --t3:clamp(1.8rem,1.25rem+2.2vw,2.85rem);
+  --pad:clamp(1rem,.45rem+1.7vw,2.5rem);
+  --top:62px; --bot:72px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Vazirmatn","Hiragino Sans","Yu Gothic","Noto Sans Arabic",Tahoma,sans-serif;
+  font-size:var(--t0);line-height:1.95;
+  padding-bottom:calc(var(--bot) + env(safe-area-inset-bottom));
+  background-image:radial-gradient(rgba(21,30,60,.045) 1px,transparent 0);
+  background-size:22px 22px;
+}
+h1,h2,h3,h4{font-family:"Lalezar","Vazirmatn",Tahoma,sans-serif;font-weight:400;line-height:1.45;margin:0}
+p{margin:0}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--firouzeh-l);outline-offset:3px;border-radius:8px}
+a{color:var(--lapis)}
+.hide{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+
+/* ============ نوار کاشی (خط تزیینی) ============ */
+.tileband{height:14px;background:
+  repeating-linear-gradient(45deg,var(--lapis) 0 6px,transparent 6px 12px),
+  repeating-linear-gradient(-45deg,var(--firouzeh) 0 6px,transparent 6px 12px);
+  background-size:14px 14px;opacity:.16}
+
+/* ============ مِداِلون (شمسه) ============ */
+.mdl{width:46px;height:46px;flex:0 0 auto;display:grid;place-items:center;position:relative;isolation:isolate}
+.mdl::before{content:"";position:absolute;inset:0;border-radius:14px;
+  background:linear-gradient(140deg,var(--lapis),var(--firouzeh));box-shadow:var(--sh-1)}
+.mdl::after{content:"";position:absolute;inset:0;background:
+  conic-gradient(from 22.5deg,transparent 0 25%,rgba(255,255,255,.16) 0 25% 50%,transparent 0 50% 75%,rgba(255,255,255,.16) 0 75%);
+  border-radius:14px;opacity:.9}
+.mdl i{position:relative;z-index:2;font-style:normal;font-family:"Lalezar";font-size:1.5rem;color:#fff;line-height:1}
+.mdl.s{width:34px;height:34px;border-radius:11px}
+.mdl.s::before,.mdl.s::after{border-radius:11px}
+.mdl.s i{font-size:1.05rem}
+
+/* ============ نوار بالا ============ */
+.appbar{position:sticky;top:0;z-index:60;background:rgba(255,253,249,.82);backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid var(--line)}
+.appbar-in{display:flex;align-items:center;gap:.8rem;min-height:var(--top)}
+.brand{display:flex;align-items:center;gap:.6rem;flex:0 0 auto}
+.brand .lg{width:40px;height:40px;flex:0 0 auto;border-radius:13px;background:linear-gradient(140deg,var(--lapis-d),var(--lapis) 60%,var(--firouzeh));display:grid;place-items:center;box-shadow:var(--sh-2)}
+.brand .lg svg{width:24px;height:24px}
+.brand b{display:block;font-family:"Lalezar";font-size:1.28rem;line-height:1.15}
+.brand span{display:block;font-size:.6rem;letter-spacing:.22em;color:var(--muted)}
+.iconbtn{width:42px;height:42px;flex:0 0 auto;display:grid;place-items:center;border:1px solid var(--line);background:var(--surface);border-radius:13px;color:var(--ink);transition:.2s}
+.iconbtn:hover{background:var(--surface-2);transform:translateY(-1px)}
+.iconbtn svg{width:22px;height:22px}
+.spacer{margin-inline-start:auto}
+.nratechip{margin-inline-start:.5rem;display:inline-flex;align-items:center;gap:.35rem;background:linear-gradient(135deg,#FBF3E2,#F5E7C8);border:1px solid #E6D3A8;color:#7A5410;border-radius:100px;padding:.3rem .7rem;font-size:.75rem;font-weight:700;white-space:nowrap}
+
+/* ============ نمایشگرها ============ */
+.screen{display:none}
+.screen.active{display:block}
+.sec{margin:2rem 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.sec-head h2{font-size:var(--t1);display:flex;align-items:center;gap:.55rem}
+.sec-head p{color:var(--muted);font-size:.82rem}
+.eyebrow{display:block;font-size:.72rem;letter-spacing:.16em;color:var(--zar);font-weight:700;margin-bottom:.15rem}
+
+/* ============ هیرو ============ */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(120% 90% at 88% 8%,rgba(190,138,44,.30),transparent 58%),
+  radial-gradient(90% 80% at 8% 92%,rgba(15,127,121,.34),transparent 60%),
+  linear-gradient(150deg,var(--lapis-d),var(--lapis) 56%,#1D5F7E);
+  color:#fff;padding:clamp(1.25rem,2.8vw,2.1rem) 0 clamp(2rem,3.4vw,2.6rem);border-radius:0 0 var(--r-xl) var(--r-xl)}
+.hero .shamsa{position:absolute;inset-inline-start:-6%;top:-22%;width:min(520px,78vw);opacity:.14;pointer-events:none;animation:spin 90s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-in{position:relative;display:grid;grid-template-columns:1.45fr .9fr;gap:1.6rem;align-items:start}
+.hero h1{font-size:var(--t2);line-height:1.3;margin-bottom:.5rem}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,rgba(190,138,44,.55) 0);padding-inline:.08em}
+.hero .lead{color:rgba(255,255,255,.84);max-width:46ch;font-size:.94rem}
+.hchips{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:1rem}
+.hchip{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.24);border-radius:100px;padding:.32rem .75rem;font-size:.78rem;font-weight:600;backdrop-filter:blur(4px)}
+.hchip b{font-family:"Lalezar";font-size:1rem;font-weight:400}
+.hsearch{position:relative;margin-top:1.3rem;max-width:520px}
+.hsearch input{width:100%;padding:1.05rem 3.3rem 1.05rem 1.1rem;border-radius:var(--r);border:0;background:rgba(255,255,255,.97);box-shadow:var(--sh-3);font-size:1rem}
+.hsearch input::placeholder{color:#98A0B8}
+.hsearch .mag{position:absolute;inset-inline-start:1.1rem;top:50%;transform:translateY(-50%);color:var(--lapis)}
+.hsearch .go{position:absolute;inset-inline-end:.4rem;top:.4rem;bottom:.4rem;border:0;border-radius:14px;padding:0 1rem;background:linear-gradient(135deg,var(--lapis),var(--firouzeh));color:#fff;font-weight:700}
+.quicktags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.8rem}
+.quicktags button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:100px;padding:.26rem .75rem;font-size:.78rem;font-weight:600;transition:.2s}
+.quicktags button:hover{background:#fff;color:var(--lapis);transform:translateY(-2px)}
+
+/* کارت رسید شناور */
+.receipt{background:var(--surface);color:var(--ink);border-radius:var(--r-lg);padding:1.15rem;box-shadow:var(--sh-3);position:relative;transform:rotate(-1.6deg)}
+.receipt::before,.receipt::after{content:"";position:absolute;width:16px;height:16px;border-radius:50%;background:var(--paper);top:50%;margin-top:-8px}
+.receipt::before{inset-inline-start:-9px}
+.receipt::after{inset-inline-end:-9px}
+.receipt h4{font-size:1.05rem;margin-bottom:.5rem}
+.receipt .line{display:flex;justify-content:space-between;font-size:.82rem;padding:.28rem 0;border-bottom:1px dashed var(--line)}
+.receipt .line:last-of-type{border:0}
+.receipt .tot{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,#F7F1E4,#FBF6EB);border-radius:var(--r-xs);padding:.5rem .7rem;margin-top:.6rem;font-weight:800;color:var(--lapis)}
+.receipt .tagz{position:absolute;top:-11px;inset-inline-end:1rem;background:linear-gradient(135deg,var(--zar),var(--zar-l));color:#3A2703;font-weight:800;font-size:.72rem;padding:.2rem .6rem;border-radius:100px;box-shadow:var(--sh-1)}
+
+/* ============ کاشی دسته‌ها (بنتو) ============ */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+.tile{position:relative;overflow:hidden;text-align:right;border:1px solid var(--line-soft);border-radius:var(--r);background:var(--surface);padding:1.05rem;display:flex;flex-direction:column;gap:.55rem;box-shadow:var(--sh-1);transition:transform .2s,box-shadow .28s,border-color .28s}
+.tile::after{content:"";position:absolute;inset-inline:0;top:0;height:3px;background:linear-gradient(90deg,var(--c1),var(--c2))}
+.tile:hover{transform:translateY(-5px);box-shadow:var(--sh-2);border-color:var(--line)}
+.tile b{font-size:1rem;font-weight:700;line-height:1.5}
+.tile small{color:var(--muted);font-size:.76rem}
+.tile .go{margin-top:auto;font-size:.78rem;font-weight:700;color:var(--lapis);display:flex;align-items:center;gap:.25rem}
+.tile:hover .go{gap:.5rem}
+.tile.wide{grid-column:span 2}
+.tile.wide{background:linear-gradient(135deg,var(--surface),#F3F6FC)}
+
+/* ============ کارت خدمت ============ */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:.9rem}
+.card{position:relative;background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:1.05rem;box-shadow:var(--sh-1);display:flex;flex-direction:column;gap:.6rem;transition:transform .2s,box-shadow .28s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sh-2)}
+.card-top{display:flex;align-items:center;gap:.6rem}
+.card .catname{font-size:.76rem;font-weight:700;color:var(--firouzeh)}
+.card h3{font-size:1.05rem;line-height:1.55}
+.card .desc{font-size:.84rem;color:var(--muted)}
+.metas{display:flex;gap:.4rem;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:.28rem;font-size:.75rem;background:var(--surface-2);border-radius:100px;padding:.18rem .62rem;color:var(--muted)}
+.pill.warn{background:#FCF1E0;color:#7E5410;font-weight:700}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:.5rem;border-top:1px dashed var(--line);padding-top:.7rem;margin-top:auto}
+.price{line-height:1.3}
+.price b{font-family:"Lalezar";font-size:1.3rem;color:var(--lapis);font-weight:400}
+.price small{display:block;font-size:.68rem;color:var(--muted)}
+
+/* ============ دکمه‌ها ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;border:1px solid var(--line);border-radius:var(--r-sm);padding:.72rem 1.1rem;font-weight:700;background:var(--surface);transition:transform .16s,box-shadow .22s,filter .22s;line-height:1.2;text-decoration:none}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--sh-2)}
+.btn:active{transform:translateY(0)}
+.btn-p{background:linear-gradient(135deg,var(--lapis-d),var(--lapis) 60%,var(--firouzeh));color:#fff;border-color:transparent}
+.btn-z{background:linear-gradient(135deg,var(--zar),var(--zar-l));color:#3A2703;border-color:transparent}
+.btn-g{background:transparent}
+.btn-t{background:linear-gradient(135deg,var(--firouzeh),var(--firouzeh-l));color:#fff;border-color:transparent}
+.btn-sm{padding:.45rem .85rem;font-size:.85rem;border-radius:var(--r-xs)}
+.btn-block{width:100%}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* ============ جست‌وجو و فیلتر (نوار باریک، اسکرول‌هوشمند) ============ */
+.filters{position:sticky;top:var(--top);z-index:40;background:var(--paper);padding:.55rem 0 .5rem;border-bottom:1px solid var(--line-soft);margin-bottom:1rem;box-shadow:0 14px 20px -20px rgba(21,30,60,.45);transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s}
+.filters.up{transform:translateY(calc(-100% - 3px));box-shadow:none}
+.frow{display:flex;gap:.5rem;align-items:stretch}
+.frow .searchbar{flex:1 1 auto;min-width:0}
+.frow .searchbar input{padding:.72rem 2.6rem .72rem 1rem;font-size:.9rem}
+.frow .searchbar .mag{inset-inline-start:.85rem}
+
+.catsel{flex:0 0 auto;display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--line);background:var(--surface);border-radius:var(--r-sm);padding:.6rem .8rem;font-weight:700;font-size:.85rem;white-space:nowrap;color:var(--ink);box-shadow:var(--sh-1);transition:.2s;max-width:47%}
+.catsel b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:9.5rem}
+.catsel .car{transition:transform .25s;color:var(--muted);font-size:.7rem}
+.catsel[aria-expanded="true"]{border-color:var(--lapis);color:var(--lapis)}
+.catsel[aria-expanded="true"] .car{transform:rotate(180deg);color:var(--lapis)}
+
+.catpanel{max-height:min(44vh,300px);overflow:auto;margin-top:.5rem;border:1px solid var(--line-soft);border-radius:var(--r-sm);background:var(--surface);padding:.62rem;box-shadow:var(--sh-2);animation:catin .22s ease}
+@keyframes catin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.catpanel.closeup{animation:none}
+
+.chips{display:flex;gap:.4rem;flex-wrap:wrap}
+.chip{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:100px;padding:.42rem .85rem;font-size:.83rem;font-weight:600;color:var(--muted);transition:.2s;white-space:nowrap}
+.chip:hover{color:var(--ink);border-color:var(--lapis);transform:translateY(-2px)}
+.chip[aria-pressed="true"]{background:linear-gradient(135deg,var(--lapis),var(--firouzeh));color:#fff;border-color:transparent}
+
+/* ============ ریل ============ */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(252px,258px);gap:.8rem;overflow-x:auto;padding:.25rem .25rem 1rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.rail>*{scroll-snap-align:start}
+.rail::-webkit-scrollbar{height:5px}
+.rail::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+
+/* ============ مراحل ============ */
+.stepsrow{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;position:relative}
+.stepc{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:1.05rem;box-shadow:var(--sh-1);position:relative}
+.stepc .n{font-family:"Lalezar";font-size:2.3rem;line-height:1;color:var(--surface-3);position:absolute;inset-inline-end:1rem;top:.6rem}
+.stepc b{display:block;font-size:1rem;margin:.1rem 0 .25rem;position:relative}
+.stepc p{font-size:.83rem;color:var(--muted);position:relative}
+
+/* ============ پنل ============ */
+.panel{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:1.2rem;box-shadow:var(--sh-1)}
+.panel h2{font-size:var(--t1);margin-bottom:.4rem}
+.panel h3{font-size:1.02rem;margin:1.2rem 0 .5rem;display:flex;align-items:center;gap:.5rem}
+.split{display:grid;grid-template-columns:1.55fr 1fr;gap:1.1rem;align-items:start}
+.sticky{position:sticky;top:calc(var(--top) + 14px)}
+.field{margin-bottom:.9rem}
+.field label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.32rem}
+.field input,.field select,.field textarea{width:100%;padding:.72rem .85rem;border:1px solid var(--line);border-radius:var(--r-xs);background:var(--surface);transition:.2s}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--firouzeh);box-shadow:0 0 0 3px rgba(15,127,121,.12);outline:none}
+.field textarea{min-height:84px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.hint{color:var(--muted);font-size:.82rem;margin-bottom:.6rem}
+.doclist{list-style:none;margin:.3rem 0 0;padding:0;display:flex;flex-direction:column;gap:.5rem}
+.doclist li{display:flex;gap:.7rem;align-items:flex-start;background:var(--surface-2);border-radius:var(--r-xs);padding:.62rem .78rem}
+.doclist .n{width:26px;height:26px;border-radius:9px;background:var(--surface);display:grid;place-items:center;font-size:.78rem;font-weight:800;color:var(--lapis);flex:0 0 auto;border:1px solid var(--line-soft);font-family:"Lalezar"}
+.doclist .txt{flex:1;font-size:.9rem}
+.doclist .txt small{display:block;color:var(--muted);font-size:.74rem;margin-top:.15rem}
+.up{margin-top:.45rem;border:1.5px dashed var(--line);border-radius:var(--r-xs);padding:.6rem;text-align:center;cursor:pointer;background:var(--surface);font-size:.83rem;color:var(--muted);transition:.2s;display:block}
+.up:hover{border-color:var(--firouzeh);color:var(--firouzeh)}
+.up input{display:none}
+.up.done{border-style:solid;border-color:var(--firouzeh);background:#E6F5F2;color:#0A6A63;font-weight:700}
+.methods{display:grid;gap:.5rem}
+.method input{position:absolute;opacity:0;pointer-events:none}
+.method{display:block;position:relative}
+.method .mbox{display:block;border:1.5px solid var(--line);border-radius:var(--r-xs);padding:.68rem .85rem;background:var(--surface);transition:.2s}
+.method input:checked + .mbox{border-color:var(--firouzeh);background:#E6F5F2}
+.method .mbox b{display:block;font-size:.92rem}
+.method .mbox small{color:var(--muted);font-size:.77rem}
+.sumline{display:flex;justify-content:space-between;gap:1rem;padding:.45rem 0;border-bottom:1px dashed var(--line);font-size:.9rem}
+.sumline.total{border:0;font-weight:800;font-size:1.08rem;color:var(--lapis);padding-top:.65rem}
+.note{background:linear-gradient(135deg,#FBF6EA,#FDFAF3);border-inline-start:4px solid var(--zar);border-radius:var(--r-xs);padding:.75rem .9rem;font-size:.84rem;line-height:1.85}
+.err{background:#FCEDEE;border-inline-start:4px solid var(--shangarf);color:#8B1B22;border-radius:var(--r-xs);padding:.65rem .85rem;font-size:.85rem;font-weight:700;margin-top:.7rem}
+
+/* ============ تایم‌لاین ============ */
+.steps{list-style:none;padding:0;margin:.8rem 0 0}
+.steps li{position:relative;padding-inline-start:2.1rem;padding-bottom:1rem;border-inline-start:2px solid var(--line);margin-inline-start:.55rem}
+.steps li:last-child{border-color:transparent;padding-bottom:0}
+.steps li::before{content:"";position:absolute;inset-inline-start:-9px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--surface);border:2px solid var(--line)}
+.steps li.done::before{background:var(--firouzeh);border-color:var(--firouzeh)}
+.steps li.now::before{background:var(--zar);border-color:var(--zar);box-shadow:0 0 0 5px rgba(190,138,44,.18)}
+.steps b{display:block;font-size:.94rem}
+.steps small{color:var(--muted);font-size:.77rem}
+.codebox{display:flex;flex-direction:column;align-items:center;gap:.6rem;text-align:center;padding:1.8rem 1rem}
+.codebadge{font-family:ui-monospace,Menlo,monospace;background:linear-gradient(135deg,var(--lapis-d),var(--lapis));color:#fff;border-radius:var(--r-sm);padding:.65rem 1.2rem;letter-spacing:.16em;direction:ltr;font-weight:700;font-size:1.15rem;box-shadow:var(--sh-2)}
+.tickwrap{width:80px;height:80px}
+.tickwrap svg{width:100%;height:100%}
+
+/* ============ مدیریت ============ */
+.tabs{display:flex;gap:.3rem;background:var(--surface-2);border:1px solid var(--line-soft);border-radius:100px;padding:.25rem;margin-bottom:1rem;width:fit-content}
+.tabs button{border:0;background:none;padding:.5rem 1.1rem;border-radius:100px;font-weight:700;font-size:.88rem;color:var(--muted);transition:.2s}
+.tabs button[aria-selected="true"]{background:linear-gradient(135deg,var(--lapis),var(--firouzeh));color:#fff}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:.7rem;margin-bottom:1rem}
+.kpi{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:.9rem;box-shadow:var(--sh-1)}
+.kpi span{font-size:.77rem;color:var(--muted)}
+.kpi b{display:block;font-family:"Lalezar";font-size:1.7rem;font-weight:400;color:var(--lapis);line-height:1.35}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line-soft);border-radius:var(--r);background:var(--surface);box-shadow:var(--sh-1)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;min-width:660px}
+th,td{padding:.62rem .55rem;border-bottom:1px solid var(--line-soft);text-align:right}
+th{font-size:.77rem;color:var(--muted);background:var(--surface-2)}
+td .pin{width:110px;padding:.32rem .45rem;border-radius:9px;border:1px solid var(--line);background:var(--surface);text-align:left;direction:ltr;font-family:ui-monospace,monospace}
+td select{padding:.32rem .45rem;border-radius:9px;border:1px solid var(--line);background:var(--surface)}
+.empty{text-align:center;color:var(--muted);padding:1.9rem 1rem;font-size:.9rem}
+
+/* ============ راهنما ============ */
+.guide{display:grid;gap:.9rem}
+.gcard{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:1.2rem;box-shadow:var(--sh-1)}
+.gcard h3{font-size:1.12rem;display:flex;align-items:center;gap:.55rem;margin-bottom:.5rem}
+.gcard h3 .n{width:30px;height:30px;border-radius:10px;background:linear-gradient(140deg,var(--lapis),var(--firouzeh));color:#fff;display:grid;place-items:center;font-family:"Lalezar";font-size:1rem;flex:0 0 auto}
+.gcard ol,.gcard ul{margin:.4rem 0 0;padding-inline-start:1.25rem}
+.gcard li{margin:.3rem 0}
+code{background:var(--surface-2);border-radius:6px;padding:.1rem .35rem;font-size:.85em;direction:ltr;display:inline-block}
+pre{background:#101A33;color:#E8EFFF;border-radius:var(--r-xs);padding:.95rem;overflow-x:auto;direction:ltr;text-align:left;font-size:.81rem;line-height:1.75;margin:.6rem 0 0}
+pre code{background:none;color:inherit;padding:0}
+details{border:1px solid var(--line-soft);border-radius:var(--r-xs);background:var(--surface);padding:.72rem .9rem;margin:.45rem 0}
+summary{cursor:pointer;font-weight:700}
+details p{margin-top:.5rem;color:var(--muted);font-size:.88rem}
+
+/* ============ نوار نرخنامه ============ */
+.rateband{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;justify-content:space-between;background:linear-gradient(135deg,#FBF6EA,#F3F7FD);border:1px solid #E7DCC4;border-radius:var(--r);padding:1rem 1.15rem;box-shadow:var(--sh-1)}
+.rateband .l{display:flex;gap:.75rem;align-items:center}
+.rateband b{display:block;font-size:.98rem}
+.rateband small{color:var(--muted);font-size:.79rem;display:block}
+
+/* ============ فوتر ============ */
+footer{margin-top:2.6rem;border-top:1px solid var(--line);background:var(--surface);padding:1.5rem 0 1.7rem}
+.foot{display:flex;gap:1rem;flex-wrap:wrap;justify-content:space-between;color:var(--muted);font-size:.83rem}
+.foot b{color:var(--ink)}
+
+/* ============ نوار پایین ============ */
+.tabbar{position:fixed;inset-inline:0;bottom:0;z-index:70;background:rgba(255,253,249,.93);backdrop-filter:blur(16px) saturate(1.4);border-top:1px solid var(--line);padding:.3rem .35rem calc(.3rem + env(safe-area-inset-bottom))}
+.tabbar-in{display:grid;grid-template-columns:repeat(5,1fr);gap:.2rem;max-width:560px;margin:0 auto;position:relative}
+.tabbar button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:.12rem;padding:.42rem .1rem;border-radius:14px;color:var(--muted);font-size:.68rem;font-weight:700;transition:color .2s;position:relative;z-index:2}
+.tabbar svg{width:22px;height:22px}
+.tabbar button[aria-current="page"]{color:var(--lapis)}
+.tabbar .dotind{position:absolute;top:.1rem;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--lapis),var(--firouzeh));transition:right .32s cubic-bezier(.4,0,.2,1),width .32s cubic-bezier(.4,0,.2,1);z-index:1}
+
+/* ============ توست ============ */
+#toast{position:fixed;inset-inline-start:50%;transform:translateX(50%);inset-block-end:calc(var(--bot) + 1rem);z-index:90;display:flex;flex-direction:column;gap:.5rem;align-items:center;pointer-events:none}
+.toast{background:var(--lapis-d);color:#fff;border-radius:100px;padding:.62rem 1.15rem;box-shadow:var(--sh-3);font-size:.87rem;border:1px solid rgba(255,255,255,.14)}
+
+/* ============ ورود ملایم ============ */
+@media(prefers-reduced-motion:no-preference){
+  .rev{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,0,.2,1)}
+  .rev.in{opacity:1;transform:none}
+}
+
+/* ============ واکنش‌گرا ============ */
+@media(max-width:1000px){
+  .hero-in{grid-template-columns:1fr}
+  .receipt{max-width:420px;margin-top:1.4rem}
+  .split{grid-template-columns:1fr}
+  .sticky{position:static}
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .stepsrow{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:820px){
+  .seg{display:none}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .tile.wide{grid-column:span 2}
+}
+@media(max-width:460px){
+  .row2{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .stepsrow{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{
+  body{background:#fff;padding:0;background-image:none}
+  .appbar,.tabbar,#toast,.filters{display:none!important}
+  .screen{display:block!important}
+  .panel,.card,.gcard,.stepc,.tile{box-shadow:none;break-inside:avoid}
+}
+@page{size:A4;margin:15mm}
+
+
+/* ============ کشوی منو (حرفه‌ای) ============ */
+.scrim{position:fixed;inset:0;z-index:110;background:rgba(16,23,48,.52);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .3s}
+body.drawer-open .scrim{opacity:1;pointer-events:auto}
+body.drawer-open{overflow:hidden}
+.drawer{position:fixed;inset-block:0;inset-inline-start:0;width:min(350px,88vw);z-index:120;
+  background:var(--surface);transform:translateX(100%);transition:transform .36s cubic-bezier(.3,0,.2,1);
+  box-shadow:0 0 0 1px var(--line),-30px 0 70px -30px rgba(16,23,48,.6);display:flex;flex-direction:column;overflow-y:auto}
+body.drawer-open .drawer{transform:none}
+.dr-head{background:linear-gradient(150deg,var(--lapis-d),var(--lapis) 60%,var(--firouzeh));color:#fff;padding:1.15rem 1.1rem 1.25rem;position:relative;overflow:hidden}
+.dr-head .sh{position:absolute;inset-inline-start:-30%;top:-60%;width:260px;opacity:.16;pointer-events:none}
+.dr-head .top{display:flex;align-items:center;gap:.7rem;position:relative}
+.dr-head .lg{width:44px;height:44px;flex:0 0 auto;border-radius:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.24);display:grid;place-items:center}
+.dr-head .lg svg{width:26px;height:26px}
+.dr-head b{display:block;font-family:"Lalezar";font-size:1.3rem;line-height:1.2}
+.dr-head small{color:rgba(255,255,255,.72);font-size:.76rem}
+.dr-head .x{margin-inline-start:auto;width:36px;height:36px;border-radius:11px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;font-size:1.1rem;line-height:1}
+.dr-head .x:hover{background:rgba(255,255,255,.24)}
+.dr-nav{padding:.6rem .55rem;display:flex;flex-direction:column;gap:.15rem}
+.dr-lab{font-size:.7rem;letter-spacing:.14em;color:var(--muted);font-weight:700;padding:.75rem .7rem .3rem}
+.dr-nav button{display:flex;align-items:center;gap:.75rem;width:100%;text-align:right;border:0;background:none;padding:.72rem .7rem;border-radius:14px;font-weight:600;color:var(--ink);transition:.18s;font-size:.95rem}
+.dr-nav button:hover{background:var(--surface-2)}
+.dr-nav button[aria-current="page"]{background:linear-gradient(135deg,rgba(34,64,127,.1),rgba(15,127,121,.12));color:var(--lapis);font-weight:700}
+.dr-nav .ic{width:34px;height:34px;flex:0 0 auto;border-radius:11px;display:grid;place-items:center;background:var(--surface-2);color:var(--lapis)}
+.dr-nav .ic svg{width:19px;height:19px}
+.dr-nav button[aria-current="page"] .ic{background:linear-gradient(140deg,var(--lapis),var(--firouzeh));color:#fff}
+.dr-nav .arrow{margin-inline-start:auto;color:var(--muted);opacity:.5;transition:.2s}
+.dr-nav button:hover .arrow{opacity:1;transform:translateX(-3px)}
+.dr-foot{margin-top:auto;padding:1rem 1.1rem 1.4rem;border-top:1px solid var(--line-soft);color:var(--muted);font-size:.78rem;line-height:1.9}
+.dr-foot b{color:var(--ink)}
+
+/* ============ دسترسی سریع ============ */
+.quickrail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(150px,158px);gap:.65rem;overflow-x:auto;padding:.25rem .25rem .9rem;scroll-snap-type:x mandatory}
+.quickrail>*{scroll-snap-align:start}
+.quickrail::-webkit-scrollbar{height:5px}
+.quickrail::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+.qcard{display:flex;flex-direction:column;gap:.5rem;align-items:flex-start;text-align:right;border:1px solid var(--line-soft);background:var(--surface);border-radius:var(--r);padding:.85rem;box-shadow:var(--sh-1);transition:transform .2s,box-shadow .26s,border-color .26s}
+.qcard:hover{transform:translateY(-4px);box-shadow:var(--sh-2);border-color:var(--line)}
+.qcard b{font-size:.9rem;line-height:1.5;font-weight:700}
+.qcard small{color:var(--muted);font-size:.74rem}
+.qcard .pr{margin-top:auto;font-family:"Lalezar";font-size:1.05rem;color:var(--lapis)}
+.qcard .pr i{font-style:normal;font-family:"Vazirmatn";font-size:.68rem;color:var(--muted);margin-inline-start:.25rem}
+
+/* ============ کاشی دسته — درشت‌تر ============ */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem}
+.tile{padding:1.15rem 1.1rem}
+.tile b{font-size:1.06rem}
+.tile .ring{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;line-height:1;position:relative;isolation:isolate;background:var(--surface-2)}
+.tile .ring::before{content:"";position:absolute;inset:0;border-radius:16px;background:linear-gradient(140deg,var(--c1),var(--c2));opacity:.14}
+.tile .ring i{position:relative;z-index:1;font-style:normal}
+
+/* ============ بخش‌های راهنما ============ */
+.gsec{margin-bottom:2rem;scroll-margin-top:calc(var(--top) + 16px)}
+
+
+/* ============ مودال / ورود مدیر / خوش‌آمد ============ */
+.modal{position:fixed;inset:0;z-index:130;display:none;place-items:center;padding:1rem;background:rgba(16,23,48,.55);backdrop-filter:blur(4px)}
+.modal.open{display:grid}
+.modal-box{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--sh-3);width:min(430px,100%);padding:1.35rem;border:1px solid var(--line-soft)}
+.modal-box h3{font-size:1.18rem;margin-bottom:.35rem}
+.modal-box p{color:var(--muted);font-size:.87rem}
+.modal-box .field{margin-top:.9rem}
+
+/* ============ کارهای پرکاربرد — فشرده ============ */
+.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:.55rem}
+.qbtn{display:flex;align-items:center;gap:.6rem;text-align:right;border:1px solid var(--line-soft);background:var(--surface);border-radius:var(--r-sm);padding:.6rem .7rem;box-shadow:var(--sh-1);transition:transform .18s,box-shadow .24s,border-color .24s}
+.qbtn:hover{transform:translateY(-3px);box-shadow:var(--sh-2);border-color:var(--lapis)}
+.qbtn .t{flex:1;min-width:0}
+.qbtn b{display:block;font-size:.87rem;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qbtn small{font-family:"Lalezar";font-size:.82rem;color:var(--lapis)}
+.qbtn .tl{flex:0 0 auto;color:var(--muted);opacity:.5}
+
+/* ============ کارت خدمت فشرده (بدون توضیح) ============ */
+.grid{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.75rem}
+.card{padding:.95rem;gap:.5rem}
+.card h3{font-size:.98rem;line-height:1.5}
+.card-foot{padding-top:.6rem}
+
+/* ============ صفحهٔ تماس ============ */
+.cgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;align-items:start}
+.ctile{display:flex;align-items:center;gap:.85rem;border:1px solid var(--line-soft);background:var(--surface);border-radius:var(--r);padding:.9rem 1rem;box-shadow:var(--sh-1);transition:transform .18s,box-shadow .24s;text-decoration:none;color:inherit}
+.ctile:hover{transform:translateY(-3px);box-shadow:var(--sh-2)}
+.ctile .ic{width:44px;height:44px;flex:0 0 auto;border-radius:14px;display:grid;place-items:center;background:var(--surface-2);color:var(--lapis)}
+.ctile .ic svg{width:22px;height:22px}
+.ctile b{display:block;font-size:.95rem}
+.ctile small{color:var(--muted);font-size:.79rem;direction:ltr;display:block;text-align:right}
+.ownercard{background:linear-gradient(150deg,var(--lapis-d),var(--lapis) 60%,var(--firouzeh));color:#fff;border-radius:var(--r-lg);padding:1.3rem;box-shadow:var(--sh-2);position:relative;overflow:hidden}
+.ownercard .sh{position:absolute;inset-inline-start:-25%;top:-45%;width:280px;opacity:.15;pointer-events:none}
+.ownercard .lg2{width:52px;height:52px;border-radius:16px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26);display:grid;place-items:center;margin-bottom:.7rem;position:relative}
+.ownercard .lg2 svg{width:30px;height:30px}
+.ownercard b{display:block;font-family:"Lalezar";font-size:1.5rem;line-height:1.25;position:relative}
+.ownercard p{color:rgba(255,255,255,.82);font-size:.87rem;margin-top:.35rem;position:relative}
+.ownercard .tag{display:inline-flex;gap:.35rem;align-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:.24rem .7rem;font-size:.76rem;margin-top:.7rem;position:relative}
+
+/* ============ سفارش‌های من ============ */
+.mini{display:flex;justify-content:space-between;gap:.7rem;align-items:center;border:1px solid var(--line-soft);border-radius:var(--r-sm);padding:.7rem .85rem;background:var(--surface);box-shadow:var(--sh-1);margin-top:.55rem;text-align:right;width:100%;transition:.2s}
+.mini:hover{border-color:var(--lapis);transform:translateX(-3px)}
+.mini b{font-size:.9rem}
+.mini small{display:block;color:var(--muted);font-size:.76rem}
+.mini .st{font-size:.75rem;font-weight:700;color:var(--firouzeh);white-space:nowrap}
+.actions{display:flex;gap:.55rem;flex-wrap:wrap}
+.actions .btn{flex:1 1 160px}
+
+/* ============ هشدار مالکیت ============ */
+.ownerline{display:flex;align-items:center;gap:.5rem;justify-content:center;color:var(--muted);font-size:.79rem;padding:.7rem 0;flex-wrap:wrap;text-align:center}
+.ownerline b{color:var(--ink)}
+
+@media(max-width:560px){
+  .catsel b{max-width:6.5rem}
+  .catsel{padding:.55rem .65rem;font-size:.82rem}
+  .frow .searchbar input{padding:.68rem 2.4rem .68rem .8rem;font-size:.86rem}
+}
+
+</style>
+</head>
+<body>
+
+<div class="tileband" aria-hidden="true"></div>
+
+<!-- ==================== کشوی منو ==================== -->
+<div class="scrim" id="scrim" data-close="1"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="منوی اصلی">
+  <div class="dr-head">
+    <span class="sh" aria-hidden="true"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2">
+<circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="40"/>
+<g><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(0 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(45 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(90 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(135 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(180 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(225 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(270 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(315 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(11.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(33.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(56.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(78.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(101.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(123.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(146.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(168.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(191.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(213.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(236.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(258.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(281.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(303.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(326.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(348.75 100 100)"/></g></g></svg></span>
+    <div class="top">
+      <span class="lg"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="4" y="11" width="27" height="21" rx="3.4" stroke="#fff" stroke-width="2.4"/><path d="M31 18h5.5a5.5 5.5 0 0 1 0 11H31" stroke="#8FE3D6" stroke-width="2.4"/><path d="M10 17.5h9M10 22.5h14M10 27.5h6" stroke="#8FE3D6" stroke-width="2.1" stroke-linecap="round"/><path d="M32 34.5l9.5 9.5M32 44l9.5-9.5" stroke="#F0C878" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+      <span><b>__BRAND__</b><small id="drOwner">خدمات اینترنتی</small></span>
+      <button class="x" data-close="1" aria-label="بستن">✕</button>
+    </div>
+  </div>
+  <nav class="dr-nav">
+    <span class="dr-lab">دسترسی سریع</span>
+    <button class="dr-cta" data-go="services" style="background:linear-gradient(135deg,var(--lapis-d),var(--lapis) 62%,var(--firouzeh));color:#fff">
+      <svg class="arrow" viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ic" style="background:rgba(255,255,255,.16);color:#fff"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/></svg></span>
+      <span>همهٔ خدمات و سفارش</span>
+    </button>
+    <span class="dr-lab">بخش‌ها</span>
+    <button data-go="home"><svg class="arrow" viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11l8-6.5 8 6.5V20a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1v-9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span>خانه</span></button><button data-go="services"><svg class="arrow" viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/></svg></span><span>همهٔ خدمات</span></button><button data-go="mine"><svg class="arrow" viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><span>سفارش‌های من</span></button><button data-go="track"><svg class="arrow" viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.9"/><path d="M16.6 16.6L21 21" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><span>پیگیری سفارش</span></button><button data-go="contact"><svg class="arrow" viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3.5h3l1.6 4-2 1.4a12 12 0 0 0 6.5 6.5l1.4-2 4 1.6v3a1.6 1.6 0 0 1-1.7 1.6C10.2 19.8 4.2 13.8 4.4 5.2A1.6 1.6 0 0 1 6 3.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><span>تماس با ما</span></button>
+    <span class="dr-lab">مدیریت و راهنما</span>
+    <button data-go="admin"><svg class="arrow" viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V9M10 20V4M16 20v-8M22 20H2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><span>پیشخوان مدیریت</span></button><button data-go="guide"><svg class="arrow" viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3.5" width="16" height="17" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>راهنمای انتشار و APK</span></button>
+  </nav>
+  <div class="dr-foot">
+    <b id="drFootName">—</b><br>همهٔ سفارش‌های این نرم‌افزار مستقیم به همین مرکز می‌رسه.
+  </div>
+</aside>
+
+<!-- ==================== ورود مدیر ==================== -->
+<div class="modal" id="adminGate" role="dialog" aria-modal="true" aria-label="ورود مدیر">
+  <div class="modal-box">
+    <span class="mdl" aria-hidden="true" style="margin-bottom:.6rem"><i>🔒</i></span>
+    <h3>ورود پیشخوان مدیریت</h3>
+    <p>این بخش فقط برای صاحب کسب‌وکار است. رمز را وارد کن.</p>
+    <div class="field"><label for="gatePass">رمز مدیریت</label><input id="gatePass" type="password" placeholder="••••••" autocomplete="off"></div>
+    <p class="err hide" id="gateErr"></p>
+    <div style="display:flex;gap:.5rem;margin-top:.6rem">
+      <button class="btn btn-p btn-block" id="gateOk">ورود</button>
+      <button class="btn btn-g" data-close="1">انصراف</button>
+    </div>
+    <p style="font-size:.78rem;margin-top:.7rem">رمز پیش‌فرض: <code>1405</code> — در ابتدای کد، بخش <code>OWNER.adminPass</code> آن را عوض کن.</p>
+  </div>
+</div>
+
+<!-- ==================== نوار بالا ==================== -->
+<header class="appbar">
+  <div class="wrap appbar-in">
+    <button class="iconbtn" id="menuBtn" aria-label="باز کردن منو" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <div class="brand" style="margin-inline-start:.55rem">
+      <span class="lg"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="4" y="11" width="27" height="21" rx="3.4" stroke="#fff" stroke-width="2.4"/><path d="M31 18h5.5a5.5 5.5 0 0 1 0 11H31" stroke="#8FE3D6" stroke-width="2.4"/><path d="M10 17.5h9M10 22.5h14M10 27.5h6" stroke="#8FE3D6" stroke-width="2.1" stroke-linecap="round"/><path d="M32 34.5l9.5 9.5M32 44l9.5-9.5" stroke="#F0C878" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+      <span><b>__BRAND__</b><span>SERVICES · ۱۴۰۵</span></span>
+    </div>
+    <span class="spacer"></span>
+    <span class="nratechip" id="nrateChip">نرخنامهٔ ۱۴۰۵</span>
+  </div>
+</header>
+
+<main>
+<!-- ==================== خانه ==================== -->
+<section class="screen active" id="home">
+  <div class="hero">
+    <span class="shamsa" aria-hidden="true"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2">
+<circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="40"/>
+<g><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(0 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(45 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(90 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(135 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(180 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(225 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(270 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(315 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(11.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(33.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(56.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(78.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(101.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(123.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(146.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(168.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(191.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(213.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(236.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(258.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(281.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(303.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(326.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(348.75 100 100)"/></g></g></svg></span>
+    <div class="wrap hero-in">
+      <div>
+        <span class="eyebrow" id="heroOwner">—</span>
+        <h1>کاری داری؟ <em>سفارش بده</em></h1>
+        <p class="lead">سامانه‌های دولتی، کنکور، امور قضایی، بیمه و بانک، چاپ و تایپ. مدارک رو بفرست، هزینه رو ببین، بقیه‌اش با ما.</p>
+        <div class="hsearch">
+          <svg class="mag" width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.1"/><path d="M16.6 16.6L21 21" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg>
+          <input id="qHome" type="search" placeholder="چی می‌خوای؟ مثلاً ثنا، کنکور، اینماد..." aria-label="جست‌وجوی خدمات">
+        </div>
+        <div class="quicktags" id="quickTags"></div>
+      </div>
+      <div class="receipt rev">
+        <span class="tagz">نمونهٔ سفارش</span>
+        <h4>خلاصهٔ سفارش</h4>
+        <div class="line"><span>خدمت</span><span>ثبت‌نام ثنا</span></div>
+        <div class="line"><span>زمان انجام</span><span>همان روز</span></div>
+        <div class="line"><span>حق‌الزحمه</span><span>۲۳۵٬۰۰۰ تومان</span></div>
+        <div class="tot"><span>جمع کل</span><span>۲۶۵٬۰۰۰ تومان</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="sec rev" style="margin-top:1.3rem">
+      <div class="sec-head"><div><span class="eyebrow">یک لمس تا سفارش</span><h2>کارهای پرکاربرد</h2></div>
+        <button class="btn btn-sm btn-g" data-go="services">همهٔ خدمات ›</button></div>
+      <div class="qgrid" id="quickRail"></div>
+    </div>
+
+    <div class="sec rev">
+      <div class="sec-head"><div><span class="eyebrow">فهرست اصلی</span><h2>دسته‌بندی خدمات</h2></div><p id="catCount">—</p></div>
+      <div class="tiles" id="catTiles"></div>
+    </div>
+
+    <div class="sec rev">
+      <div class="sec-head"><div><span class="eyebrow">پرتکرارها</span><h2>بیشترین سفارش‌ها</h2></div></div>
+      <div class="rail" id="popRail"></div>
+    </div>
+
+    <div class="sec rev">
+      <div class="rateband">
+        <div class="l">
+          <span class="mdl s" aria-hidden="true"><i>﷼</i></span>
+          <span><b>قیمت‌ها بر اساس نرخنامهٔ اتحادیهٔ فناوران رایانه</b><small id="rateInfo">—</small></span>
+        </div>
+        <button class="btn btn-sm btn-g" data-go="contact">تماس و سفارش مستقیم ›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== خدمات ==================== -->
+<section class="screen" id="services">
+  <div class="wrap">
+    <div class="filters" id="svcFilters">
+      <div class="sec-head" style="margin-bottom:.45rem"><div><span class="eyebrow">کاتالوگ کامل</span><h2>همهٔ خدمات</h2></div><p id="svcCount"></p></div>
+      <div class="frow">
+        <div class="searchbar"><svg class="mag" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.2"/><path d="M16.6 16.6L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="جست‌وجو در همهٔ خدمات..." aria-label="جست‌وجوی خدمات"></div>
+        <button class="catsel" id="catToggle" aria-expanded="false" aria-controls="chips">
+          <span id="catSelTxt">📂 همه دسته‌ها</span> <b id="catSelName" class="hide"></b><span class="car" aria-hidden="true">▼</span>
+        </button>
+      </div>
+      <div class="catpanel hide" id="catPanel"><div class="chips" id="chips"></div></div>
+    </div>
+    <div class="grid" id="svcGrid"></div>
+    <p class="empty hide" id="svcEmpty">چیزی پیدا نشد. یه کلمهٔ دیگه امتحان کن یا دسته رو «همه» کن.</p>
+  </div>
+</section>
+
+<!-- ==================== سفارش ==================== -->
+<section class="screen" id="order">
+  <div class="wrap">
+    <div class="sec-head" style="margin-top:1.2rem">
+      <div><span class="eyebrow">فرم سفارش</span><h2 id="ordTitle">ثبت سفارش</h2></div>
+      <button class="btn btn-sm btn-g" data-go="services">‹ بازگشت</button>
+    </div>
+    <p class="hint" id="ordSub"></p>
+    <div class="split">
+      <div class="panel">
+        <h3><span class="mdl s" aria-hidden="true"><i>۱</i></span> اطلاعات تماس</h3>
+        <div class="row2">
+          <div class="field"><label for="fName">نام و نام خانوادگی *</label><input id="fName" placeholder="مثلاً زهرا محمدی"></div>
+          <div class="field"><label for="fPhone">شماره موبایل *</label><input id="fPhone" inputmode="numeric" placeholder="09xxxxxxxxx"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="fNat">کد ملی *</label><input id="fNat" inputmode="numeric" placeholder="۱۰ رقم"></div>
+          <div class="field"><label for="fCity">شهر</label><input id="fCity" placeholder="مثلاً اردبیل"></div>
+        </div>
+        <div class="field"><label for="fNote">توضیح برای کارشناس</label><textarea id="fNote" placeholder="هر نکته‌ای که لازمه بدونیم..."></textarea></div>
+        <h3><span class="mdl s" aria-hidden="true"><i>۲</i></span> مدارک لازم</h3>
+        <p class="hint">این خدمت مدارک مشخصی می‌خواد؛ فقط انتخاب کن. <b id="docsLeft"></b></p>
+        <ul class="doclist" id="docList"></ul>
+        <h3><span class="mdl s" aria-hidden="true"><i>۳</i></span> روش پرداخت</h3>
+        <div class="methods" id="methods">
+          <label class="method"><input type="radio" name="pay" value="درگاه بانکی (زرین‌پال)" checked><span class="mbox"><b>درگاه بانکی — زرین‌پال</b><small>کارت‌های شتاب · توصیه‌شده</small></span></label>
+          <label class="method"><input type="radio" name="pay" value="کارت به کارت"><span class="mbox"><b>کارت به کارت</b><small>شمارهٔ کارت را از بخش «تماس» بردار</small></span></label>
+        </div>
+        <p class="err hide" id="formErr"></p>
+      </div>
+      <aside class="panel sticky">
+        <h2>خلاصهٔ سفارش</h2>
+        <div id="sumBox"></div>
+        <div class="note" style="margin-top:.9rem">این سفارش مستقیم برای <b id="sumOwner">—</b> ثبت می‌شه. مبلغ نهایی بعد از بررسی مدارک تأیید می‌شه.</div>
+        <button class="btn btn-p btn-block" id="payBtn" style="margin-top:.9rem">ادامه و پرداخت</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== پرداخت ==================== -->
+<section class="screen" id="pay">
+  <div class="wrap">
+    <div class="sec-head" style="margin-top:1.2rem"><div><span class="eyebrow">درگاه پرداخت</span><h2>پرداخت</h2></div><p id="paySvc2"></p></div>
+    <div class="split">
+      <div class="panel">
+        <h3><span class="mdl s" aria-hidden="true"><i>∎</i></span> اطلاعات کارت — صفحهٔ آزمایشی</h3>
+        <div class="note">این صفحه فقط نمونه‌ست؛ هیچ دادهٔ واقعی وارد نکن.</div>
+        <div class="field" style="margin-top:.8rem"><label for="cardNo">شمارهٔ کارت</label><input id="cardNo" inputmode="numeric" value="6104 3379 0000 0000"></div>
+        <div class="row2">
+          <div class="field"><label for="cardExp">تاریخ انقضا</label><input id="cardExp" value="12 / 08"></div>
+          <div class="field"><label for="cardCvv">CVV2</label><input id="cardCvv" maxlength="4" value="123"></div>
+        </div>
+        <div class="field"><label for="otp">رمز پویا</label><input id="otp" maxlength="8" value="123456"></div>
+        <button class="btn btn-t btn-block" id="doPay">پرداخت و دریافت کد پیگیری</button>
+        <p class="err hide" id="payErr"></p>
+      </div>
+      <aside class="panel sticky">
+        <h2>مبلغ قابل پرداخت</h2>
+        <div class="sumline"><span>خدمت</span><span id="paySvc" style="max-width:55%;text-align:left"></span></div>
+        <div class="sumline"><span>حق‌الزحمهٔ خدمت</span><span id="payFee"></span></div>
+        <div class="sumline"><span>هزینهٔ پیک / پست</span><span id="payShip"></span></div>
+        <div class="sumline total"><span>جمع کل</span><span id="payTotal"></span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== موفقیت ==================== -->
+<section class="screen" id="success">
+  <div class="wrap" style="padding-top:1.4rem">
+    <div class="panel codebox">
+      <span class="tickwrap"><svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><circle cx="40" cy="40" r="33" fill="#E6F5F2" stroke="#0F7F79" stroke-width="3"/><path d="M25 41l11 11 20-23" stroke="#0F7F79" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h2>سفارش ثبت شد</h2>
+      <p style="color:var(--muted)">کد پیگیری سفارش تو:</p>
+      <div class="codebadge" id="codeOut">—</div>
+      <p style="color:var(--muted);font-size:.86rem">این سفارش مستقیم برای <b id="succOwner">—</b> ثبت شده.</p>
+      <div class="actions" style="justify-content:center;margin-top:.5rem">
+        <button class="btn btn-t" id="waSend">ارسال سفارش به واتس‌اپ</button>
+        <button class="btn btn-g" id="callOwner">تماس تلفنی</button>
+      </div>
+      <div style="display:flex;gap:.55rem;flex-wrap:wrap;justify-content:center;margin-top:.7rem">
+        <button class="btn btn-g btn-sm" data-go="mine">سفارش‌های من</button>
+        <button class="btn btn-g btn-sm" data-go="services">سفارش جدید</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== سفارش‌های من ==================== -->
+<section class="screen" id="mine">
+  <div class="wrap">
+    <div class="sec-head" style="margin-top:1.2rem"><div><span class="eyebrow">سفارش‌های من</span><h2>سابقهٔ سفارش‌ها</h2></div><p id="mineCount">—</p></div>
+    <div class="panel">
+      <div id="mineBox"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== پیگیری ==================== -->
+<section class="screen" id="track">
+  <div class="wrap">
+    <div class="sec-head" style="margin-top:1.2rem"><div><span class="eyebrow">وضعیت سفارش</span><h2>پیگیری</h2></div><p>کد پیگیری رو وارد کن</p></div>
+    <div class="split">
+      <div class="panel">
+        <div class="searchbar"><svg class="mag" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.2"/><path d="M16.6 16.6L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><input id="trackInput" placeholder="مثلاً CN-4821" aria-label="کد پیگیری"></div>
+        <button class="btn btn-p btn-block" id="trackBtn" style="margin-top:.7rem">جست‌وجو</button>
+        <div id="trackOut" class="empty">هنوز کدی وارد نشده.</div>
+      </div>
+      <aside class="panel sticky">
+        <h3 style="margin-top:0">مراحل انجام سفارش</h3>
+        <ul class="steps" id="stepList"></ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== تماس ==================== -->
+<section class="screen" id="contact">
+  <div class="wrap">
+    <div class="sec-head" style="margin-top:1.2rem"><div><span class="eyebrow">ارتباط مستقیم</span><h2>تماس با ما</h2></div><p>سفارش مستقیم، بدون واسطه</p></div>
+    <div class="cgrid">
+      <div>
+        <div class="cgrid" style="grid-template-columns:1fr;gap:.65rem">
+          <a class="ctile" id="cPhone" href="#"><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3.5h3l1.6 4-2 1.4a12 12 0 0 0 6.5 6.5l1.4-2 4 1.6v3a1.6 1.6 0 0 1-1.7 1.6C10.2 19.8 4.2 13.8 4.4 5.2A1.6 1.6 0 0 1 6 3.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><span><b>تماس تلفنی</b><small id="cPhoneTxt">—</small></span></a>
+          <a class="ctile" id="cWa" href="#" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.6a8.3 8.3 0 0 0-7.1 12.6L3.6 20.4l4.4-1.2A8.3 8.3 0 1 0 12 3.6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 10.2c.3 1.9 1.9 3.5 3.8 3.8l1-1.1 1.8.6-.2 1.3c-2.9.4-6.4-2.2-7.1-4.6l1.3-.2.6 1.8z" fill="currentColor"/></svg></span><span><b>واتس‌اپ</b><small id="cWaTxt">—</small></span></a>
+          <a class="ctile" id="cTg" href="#" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.3A8 8 0 1 1 21 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12h7M8.5 9h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span><b>پیام‌رسان / تلگرام</b><small id="cTgTxt">—</small></span></a>
+          <div class="ctile" style="cursor:default"><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span><b>ساعت کاری</b><small id="cHours">—</small></span></div>
+        </div>
+        <div class="gcard" style="margin-top:.8rem">
+          <h3 style="margin-bottom:.4rem"><span class="n">›</span> سفارش بدون ثبت در برنامه</h3>
+          <p style="color:var(--muted);font-size:.88rem">اگر راحت‌تری، همین‌جا خلاصهٔ سفارشت رو بنویس و بفرست؛ کارشناس پیگیری می‌کنه.</p>
+          <div class="field" style="margin-top:.7rem"><label for="cMsgName">نام</label><input id="cMsgName" placeholder="نام شما"></div>
+          <div class="field"><label for="cMsg">توضیح سفارش</label><textarea id="cMsg" placeholder="مثلاً: ثبت‌نام ثنا برای خودم، مدارک آماده‌ست."></textarea></div>
+          <button class="btn btn-p btn-block" id="cWaSend">ارسال به واتس‌اپ مرکز</button>
+          <p class="note" style="margin-top:.7rem">سفارش‌های این نرم‌افزار فقط به این مرکز می‌رسه.</p>
+        </div>
+      </div>
+      <div class="ownercard rev">
+        <span class="sh" aria-hidden="true"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2">
+<circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="40"/>
+<g><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(0 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(45 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(90 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(135 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(180 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(225 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(270 100 100)"/><path d="M100 4 L118 40 L100 30 L82 40 Z" transform="rotate(315 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(11.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(33.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(56.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(78.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(101.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(123.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(146.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(168.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(191.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(213.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(236.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(258.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(281.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(303.75 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(326.25 100 100)"/><path d="M100 26 L112 60 L100 50 L88 60 Z" transform="rotate(348.75 100 100)"/></g></g></svg></span>
+        <span class="lg2"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="4" y="11" width="27" height="21" rx="3.4" stroke="#fff" stroke-width="2.4"/><path d="M31 18h5.5a5.5 5.5 0 0 1 0 11H31" stroke="#8FE3D6" stroke-width="2.4"/><path d="M10 17.5h9M10 22.5h14M10 27.5h6" stroke="#8FE3D6" stroke-width="2.1" stroke-linecap="round"/><path d="M32 34.5l9.5 9.5M32 44l9.5-9.5" stroke="#F0C878" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        <b id="ownName">—</b>
+        <p id="ownDesc">مرکز خدمات اینترنتی و کافی‌نت</p>
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4.5" y="10" width="15" height="10.5" rx="2.6" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> سفارش شما مستقیم به این مرکز می‌رسد</span>
+        <div style="margin-top:.9rem;position:relative;font-size:.84rem;line-height:2;color:rgba(255,255,255,.9)">
+          <div id="ownAddrLine">📍 <span id="ownAddr">—</span></div>
+          <div>⚖️ قیمت‌ها مطابق نرخنامهٔ اتحادیهٔ صنف فناوران رایانه</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== مدیریت (قفل‌دار) ==================== -->
+<section class="screen" id="admin">
+  <div class="wrap">
+    <div class="sec-head" style="margin-top:1.2rem">
+      <div><span class="eyebrow">پیشخوان کافی‌نت</span><h2>مدیریت</h2></div>
+      <div style="display:flex;gap:.45rem;flex-wrap:wrap">
+        <button class="btn btn-sm btn-g" id="seedBtn">سفارش نمونه</button>
+        <button class="btn btn-sm btn-g" id="clearBtn">پاک کردن</button>
+        <button class="btn btn-sm btn-g" id="lockBtn">خروج</button>
+      </div>
+    </div>
+    <div class="tabs" id="tabs" role="tablist">
+      <button data-tab="orders" role="tab" aria-selected="true">سفارش‌ها</button>
+      <button data-tab="prices" role="tab" aria-selected="false">ویرایش قیمت‌ها</button>
+      <button data-tab="owner" role="tab" aria-selected="false">مشخصات من</button>
+    </div>
+    <div id="panelOrders">
+      <div class="kpis" id="kpis"></div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>کد</th><th>مشتری</th><th>خدمت</th><th>مبلغ</th><th>وضعیت</th><th>تاریخ</th></tr></thead>
+        <tbody id="adminBody"></tbody>
+      </table></div>
+      <p class="empty hide" id="adminEmpty">هنوز سفارشی ثبت نشده.</p>
+    </div>
+    <div id="panelPrices" class="hide">
+      <div class="note" style="margin-bottom:1rem">قیمت هر خدمت رو همین‌جا عوض کن؛ فوری ذخیره می‌شه و در همهٔ صفحه‌ها اعمال می‌شه.</div>
+      <div class="searchbar" style="margin-bottom:.8rem"><svg class="mag" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.2"/><path d="M16.6 16.6L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><input id="priceSearch" type="search" placeholder="جست‌وجوی خدمت برای ویرایش قیمت..." aria-label="جست‌وجوی خدمت"></div>
+      <div style="display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:.9rem">
+        <button class="btn btn-sm btn-t" id="expBtn">⬇ خروجی گرفتن (JSON)</button>
+        <button class="btn btn-sm btn-g" id="impBtn">⬆ برگرداندن از فایل</button>
+        <input type="file" id="impFile" accept=".json,application/json" class="hide">
+        <button class="btn btn-sm btn-g" id="resetBtn">بازگردانی به نرخنامهٔ پیش‌فرض</button>
+      </div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>خدمت</th><th>دسته</th><th>مبلغ (تومان)</th><th>سند نرخنامه</th></tr></thead>
+        <tbody id="priceBody"></tbody>
+      </table></div>
+    </div>
+    <div id="panelOwner" class="hide">
+      <div class="gcard">
+        <h3><span class="n">›</span> مشخصات صاحب کسب‌وکار</h3>
+        <p style="color:var(--muted);font-size:.87rem">هر چیزی که اینجا بنویسی، در همهٔ صفحه‌ها به‌عنوان «طرف حساب» نمایش داده می‌شه.</p>
+        <div class="row2" style="margin-top:.8rem">
+          <div class="field"><label for="oName">نام کسب‌وکار</label><input id="oName"></div>
+          <div class="field"><label for="oPhone">تلفن</label><input id="oPhone" dir="ltr" style="text-align:left"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="oWa">واتس‌اپ (فقط رقم، با کد کشور)</label><input id="oWa" dir="ltr" style="text-align:left" placeholder="98912..."></div>
+          <div class="field"><label for="oHours">ساعت کاری</label><input id="oHours"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="oAddr">نشانی</label><input id="oAddr"></div>
+          <div class="field"><label for="oPass">رمز پیشخوان</label><input id="oPass" dir="ltr" style="text-align:left"></div>
+        </div>
+        <button class="btn btn-p" id="oSave">ذخیرهٔ مشخصات</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== راهنما ==================== -->
+<section class="screen" id="guide">
+  <div class="wrap">
+    <div class="sec-head" style="margin-top:1.2rem"><div><span class="eyebrow">اطلاعات و انتشار</span><h2>راهنما</h2></div></div>
+    <div class="guide">
+      <div class="gcard gsec" id="g-own">
+        <h3><span class="n">۱</span> مالکیت نرم‌افزار — چرا سفارش‌ها فقط به من می‌رسه؟</h3>
+        <ul>
+          <li>در ابتدای کد، بلوک <code>OWNER</code> هست. نام، تلفن، واتس‌اپ و نشانی تو **داخل خود نرم‌افزار** نوشته شده.</li>
+          <li>نوار پایین و صفحهٔ «تماس» و دکمه‌های واتس‌اپ همه به شمارهٔ تو وصلن. هر کسی نصب کنه، سفارشش مستقیم برای تو میاد.</li>
+          <li>پیشخوان مدیریت با رمز قفله؛ پس مشتری نمی‌تونه قیمت‌ها رو دست‌کاری کنه یا سفارش‌ها رو ببینه.</li>
+          <li>برای محکم‌تر شدن، می‌تونی نسخهٔ آنلاین (Firebase) راه بندازی تا سفارش‌ها در سرور خودت ثبت شه — راهنمای پایین.</li>
+        </ul>
+      </div>
+      <div class="gcard gsec" id="g-how">
+        <h3><span class="n">۲</span> چطور کار می‌کنه؟</h3>
+        <div class="stepsrow">
+          <div class="stepc"><span class="n">۱</span><b>خدمتت رو انتخاب کن</b><p>از دسته‌بندی‌ها یا جست‌وجو.</p></div>
+          <div class="stepc"><span class="n">۲</span><b>مدارک رو بفرست</b><p>نرم‌افزار می‌گه چی لازمه.</p></div>
+          <div class="stepc"><span class="n">۳</span><b>هزینه رو ببین</b><p>مبلغ از اول شفافه.</p></div>
+          <div class="stepc"><span class="n">۴</span><b>ما انجام می‌دیم</b><p>با کد پیگیری دنبال کن.</p></div>
+        </div>
+      </div>
+      <div class="gcard gsec" id="g-faq">
+        <h3><span class="n">۳</span> سوال‌های پرتکرار</h3>
+        <div id="faq"></div>
+      </div>
+      <div class="gcard gsec" id="g-price">
+        <h3><span class="n">۴</span> تغییر قیمت‌ها</h3>
+        <p>از «مدیریت ← ویرایش قیمت‌ها» یا از بلوک <code>PRICE_DEFAULTS</code> در ابتدای کد.</p>
+        <pre><code>const PRICE_DEFAULTS = {
+  "s1":  [235000, "ردیف ۸ — ثبت ثنا"],
+  "s53": [10000,  "ردیف ۳۶ — پرینت A4"],
+  // ...
+};</code></pre>
+      </div>
+      <div class="gcard gsec" id="g-apk">
+        <h3><span class="n">۵</span> ساخت فایل نصبی اندروید (APK)</h3>
+        <ol>
+          <li>در <code>github.com</code> یه مخزن <b>عمومی</b> بساز.</li>
+          <li>فایل‌های زیپ پروژه را آپلود کن.</li>
+          <li>تب <b>Actions</b> ← گردش‌کار «Build APK» اجرا می‌شه.</li>
+          <li>از بخش <b>Artifacts</b> فایل APK رو دانلود کن.</li>
+        </ol>
+      </div>
+      <div class="gcard gsec" id="g-publish">
+        <h3><span class="n">۶</span> نکات انتشار</h3>
+        <ul>
+          <li>گوگل‌پلی برای توسعه‌دهندهٔ ساکن ایران عملاً بسته‌ست؛ کافه‌بازار و مایکت واقع‌بینانه‌تره.</li>
+          <li>سیاست حفظ حریم خصوصی اجباریه (کد ملی و مدارک جمع می‌کنی).</li>
+          <li>کلید امضا (Keystore) رو گم نکن.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><b id="footBrand">—</b> — نرم‌افزار سفارش خدمات اینترنتی</div>
+    <div>قیمت‌ها بر پایهٔ نرخنامهٔ اتحادیهٔ فناوران رایانه</div>
+  </div>
+  <div class="wrap ownerline">طراحی و پشتیبانی: <b id="footOwner">—</b> · همهٔ سفارش‌های این نرم‌افزار فقط برای همین مرکز ثبت می‌شود.</div>
+</footer>
+
+<nav class="tabbar" aria-label="ناوبری پایین">
+  <div class="tabbar-in" id="tabbar">
+    <span class="dotind" id="tabDot" aria-hidden="true"></span>
+    <button data-go="home"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11l8-6.5 8 6.5V20a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1v-9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>خانه</span></button><button data-go="services"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/></svg><span>خدمات</span></button><button data-go="mine"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><span>سفارش‌های من</span></button><button data-go="track"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.9"/><path d="M16.6 16.6L21 21" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><span>پیگیری</span></button><button data-go="contact"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3.5h3l1.6 4-2 1.4a12 12 0 0 0 6.5 6.5l1.4-2 4 1.6v3a1.6 1.6 0 0 1-1.7 1.6C10.2 19.8 4.2 13.8 4.4 5.2A1.6 1.6 0 0 1 6 3.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>تماس</span></button>
+  </div>
+</nav>
+
+<div id="toast" aria-live="polite"></div>
+
+<script>
+
+/* =======================================================================
+   ۱) نرخنامه — تمام قیمت‌ها فقط در همین بلوک است.
+   با انتشار نرخنامهٔ جدید، فقط عددها را همین‌جا عوض کن.
+   ساختار هر ردیف:  "کد خدمت": [مبلغ به تومان, "سند نرخنامه"]
+   نکته: سمت راست شمارهٔ ردیف نرخنامه است؛ برای خودت یادداشت بگذار.
+   ======================================================================= */
+/* =======================================================================
+   ۰) صاحب کسب‌وکار — طرف حساب این نرم‌افزار
+   هر سفارشی که در این برنامه ثبت شود، فقط برای همین مرکز است.
+   ↓↓↓ فقط این بخش را با اطلاعات خودت عوض کن ↓↓↓
+   ======================================================================= */
+const OWNER = {
+  name:  "کافی‌نت مرکزی",              /* نام کسب‌وکار تو */
+  phone: "09120000000",                 /* تلفن تماس */
+  whatsapp: "989120000000",             /* واتس‌اپ با کد کشور، بدون + و بدون صفر */
+  telegram: "",                         /* اختیاری: آیدی تلگرام بدون @ */
+  address: "نشانی مرکز — شهر، خیابان، پلاک",
+  hours: "شنبه تا پنجشنبه، ۹ صبح تا ۹ شب",
+  adminPass: "1405"                     /* رمز ورود به پیشخوان مدیریت */
+};
+
+const RATE_INFO = {
+  title: "نرخنامهٔ اتحادیهٔ صنف فناوران رایانهٔ تهران",
+  number: "۱۴۰۴/۰۱۲۲۶۲",
+  year: "۱۴۰۵",
+  unitInSource: "ریال",
+  unitShown: "تومان"
+};
+const PRICE_DEFAULTS = {"s1": [235000, "ردیف ۸ — ثبت ثنا و احراز هویت"], "s2": [235000, "ردیف ۲ — ثبت‌نام اینترنتی (هر نفر)"], "s3": [100000, "ردیف ۵۸ — ثبت‌نام اولیه سامانه سخا"], "s4": [200000, "ردیف ۸۱ — ثبت‌نام سامانه اسکان و املاک"], "s5": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s6": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s7": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s8": [40000, "ردیف ۱۳ — دریافت سوابق تأمین اجتماعی"], "s9": [50000, "ردیف ۲۴ — ثبت و پرداخت بیمهٔ اختیاری"], "s10": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s11": [90000, "نوبت‌دهی اینترنتی (ردیف ۴)"], "s12": [90000, "نوبت‌دهی اینترنتی (ردیف ۴)"], "s13": [235000, "ردیف ۲ — ثبت‌نام اینترنتی (سنجش)"], "s14": [235000, "ردیف ۲ — ثبت‌نام اینترنتی (سنجش)"], "s15": [235000, "ردیف ۲ — ثبت‌نام اینترنتی (سنجش)"], "s16": [300000, "ردیف ۵۵ — پذیرش دانشگاه (توافقی/سامانه‌ای)"], "s17": [300000, "ردیف ۵۵/۵۶ — پذیرش دانشگاه آزاد و پیام نور"], "s18": [235000, "ردیف ۲ — ثبت‌نام آزمون استخدامی"], "s19": [235000, "ردیف ۲ — ثبت‌نام آزمون"], "s20": [235000, "ردیف ۲ — ثبت‌نام آزمون"], "s21": [350000, "توافقی — مشاوره و انتخاب رشته"], "s22": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s23": [235000, "ردیف ۲ — تکمیل فرم اینترنتی"], "s24": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s25": [100000, "خرید و پرداخت اینترنتی (ردیف ۱۴۰)"], "s26": [300000, "توافقی — تنظیم دادخواست و لایحه"], "s27": [90000, "ردیف ۶ — ثبت عدم سوء‌پیشینه"], "s28": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s29": [60000, "ردیف ۷۴ — پرداخت خلافی"], "s30": [60000, "ردیف ۸/۱۴۰ — پرداخت هزینهٔ آنلاین"], "s31": [150000, "ردیف ۷۶ — نوبت‌دهی تعویض پلاک"], "s32": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s33": [35000, "ردیف ۳ — دریافت ابلاغیهٔ قضایی"], "s34": [235000, "ردیف ۱۳۶ — مطابق ردیف ۲"], "s35": [250000, "ردیف ۷۰ — ثبت‌نام وام ازدواج (هر نفر)"], "s36": [40000, "ردیف ۱۳ — دریافت سوابق تأمین اجتماعی"], "s37": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s38": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s39": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s40": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s41": [250000, "ردیف ۴۲ — سفتهٔ الکترونیکی / احراز هویت"], "s42": [100000, "ردیف ۱۴۴ — ورود به سامانهٔ ملی مجوزها"], "s43": [550000, "ردیف ۱۰۹ — اظهارنامهٔ عادی مادهٔ ۹۵"], "s44": [500000, "توافقی — ثبت شرکت"], "s45": [500000, "توافقی — مالکیت صناعی"], "s46": [500000, "توافقی — کارت بازرگانی"], "s47": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s48": [100000, "ردیف ۱۴۴ — سامانهٔ ملی مجوزها"], "s49": [65000, "ردیف ۴۸ — تایپ سادهٔ فوری (هر برگ)"], "s50": [235000, "ردیف ۷۱ — ثبت‌نام اولیهٔ خودرو"], "s51": [100000, "ردیف ۷۲ — انتخاب خودرو سامانهٔ یکپارچه"], "s52": [90000, "نوبت‌دهی اینترنتی (ردیف ۴)"], "s53": [10000, "ردیف ۳۶ — پرینت لیزری سیاه‌وسفید A4"], "s54": [18000, "ردیف ۴۰ — پرینت رنگی متن A4"], "s55": [15000, "ردیف ۴۳ — اسکن هر برگ A4"], "s56": [10000, "ردیف ۳۶ — پرینت/کپی A4"], "s57": [65000, "ردیف ۴۸ — تایپ سادهٔ فوری"], "s58": [30000, "توافقی — خدمات جانبی چاپ"], "s59": [30000, "توافقی — صحافی"], "s60": [150000, "توافقی — چاپ کارت ویزیت"], "s61": [22500, "ردیف ۴۲ — پرینت رنگی عکس A5"], "s62": [50000, "ردیف ۱۴۰ — خرید و پرداخت اینترنتی"], "s63": [50000, "ردیف ۱۴۰ — خرید و پرداخت اینترنتی"], "s64": [50000, "ردیف ۱۴۰ — خرید و پرداخت اینترنتی"], "s65": [100000, "توافقی — رزرو اقامت"], "s66": [250000, "ردیف ۵۳ — ثبت‌نام سامانهٔ میخک"], "s67": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s68": [50000, "ردیف ۸ — پرداخت هزینه‌های آنلاین"], "s69": [35000, "ردیف ۵۱ — ارسال و دریافت / خدمات سیم‌کارت"], "s70": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s71": [235000, "ردیف ۲ — ثبت‌نام و احراز هویت"], "s72": [65000, "ردیف ۵۰ — ایجاد ایمیل توسط اپراتور"], "s73": [235000, "نرخنامهٔ نرم‌افزار — نصب و راه‌اندازی"], "s74": [300000, "نرخنامهٔ ریکاوری — بازیابی اطلاعات"], "s75": [150000, "توافقی — پشتیبانی کلاس آنلاین"], "s76": [235000, "ردیف ۲ — ثبت‌نام اینترنتی"], "s77": [235000, "ردیف ۲ — ثبت‌نام دوره"], "s78": [150000, "توافقی — تنظیم رزومه"], "s79": [235000, "ردیف ۲ — ثبت‌نام آزمون"]};
+
+/* اگر می‌خواهی قیمت‌ها خودکار از یک فایل اینترنتی به‌روز شود،
+   آدرس فایل JSON را اینجا بگذار (خالی باشد = خاموش). مثال:
+   const PRICE_SOURCE_URL = "https://example.com/cafenet-prices.json";      */
+const PRICE_SOURCE_URL = "";
+
+/* =======================================================================
+   ۲) دادهٔ خدمات و دسته‌ها
+   ======================================================================= */
+const DATA = {"cats": [{"id": "gov", "name": "سامانه‌های دولتی و ثبت‌نام", "icon": "🏛"}, {"id": "edu", "name": "کنکور، آزمون و دانشگاه", "icon": "🎓"}, {"id": "law", "name": "قضایی و انتظامی", "icon": "⚖️"}, {"id": "fin", "name": "مالی، بانکی و بیمه", "icon": "💳"}, {"id": "biz", "name": "کسب‌وکار و شرکت‌ها", "icon": "🏢"}, {"id": "car", "name": "خودرو و پلاک", "icon": "🚗"}, {"id": "print", "name": "چاپ، تایپ و اسکن", "icon": "🖨"}, {"id": "travel", "name": "سفر و بلیت", "icon": "🚌"}, {"id": "digital", "name": "اینترنت، موبایل و دیجیتال", "icon": "📱"}, {"id": "study", "name": "آموزش و اشتغال", "icon": "📚"}], "services": [{"id": "s1", "cat": "gov", "title": "ثبت‌نام و پیگیری سامانه ثنا (ابلاغ الکترونیک قضایی)", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "ثبت‌نام اولیه، فعال‌سازی و مشاهده ابلاغیه‌ها"}, {"id": "s2", "cat": "gov", "title": "ثبت‌نام و احراز هویت سجام (بورس)", "time": "۱ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "شماره شبا حساب بانکی"], "desc": "احراز هویت، ثبت‌نام و پرداخت حق‌الزحمه سجام"}, {"id": "s3", "cat": "gov", "title": "سامانه سخا / نظام وظیفه عمومی", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "ثبت‌نام، مشاهده وضعیت مشمولی و معافیت‌ها"}, {"id": "s4", "cat": "gov", "title": "سامانه املاک و اسکان (ثبت سکونت)", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "کد پستی محل سکونت"], "desc": "ثبت و ویرایش اطلاعات سکونت خود و خانواده"}, {"id": "s5", "cat": "gov", "title": "ثبت‌نام یارانه و حمایت معیشتی", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "ثبت‌نام، اعتراض و پیگیری یارانه"}, {"id": "s6", "cat": "gov", "title": "سامانه سهام عدالت / ثبت‌نام سهام", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "ثبت‌نام، فعال‌سازی و بررسی سهام"}, {"id": "s7", "cat": "gov", "title": "سامانه سدف و دهک‌بندی (وزارت رفاه)", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "ثبت‌نام و اعتراض به دهک درآمدی"}, {"id": "s8", "cat": "gov", "title": "سامانه تأمین اجتماعی (سوابق بیمه)", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "مشاهده سوابق، ریز پرداخت و چاپ بیمه‌نامه"}, {"id": "s9", "cat": "gov", "title": "ثبت‌نام بیمه اختیاری تأمین اجتماعی", "time": "۱ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "ثبت درخواست بیمه اختیاری و مشاغل آزاد"}, {"id": "s10", "cat": "gov", "title": "سامانه بیمه سلامت و پرونده الکترونیک", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "کد ملی سرپرست خانوار"], "desc": "ثبت‌نام، تمدید و پیگیری دفترچه سلامت"}, {"id": "s11", "cat": "gov", "title": "ثبت احوال: نوبت کارت ملی و شناسنامه", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "گرفتن نوبت و پیگیری صدور"}, {"id": "s12", "cat": "gov", "title": "خدمات پلیس +۱۰ (انتظامی)", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "نوبت‌دهی و ثبت درخواست‌های انتظامی"}, {"id": "s13", "cat": "gov", "title": "نوبت‌دهی پزشکی و سامانه سلامت", "time": "همان روز", "docs": ["شماره همراه", "کد ملی بیمه‌شده"], "desc": "رزرو نوبت پزشک و مراکز درمانی"}, {"id": "s14", "cat": "edu", "title": "ثبت‌نام کنکور سراسری (سنجش)", "time": "زمان ثبت‌نام", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "تصویر مدرک تحصیلی (دیپلم/پیش‌دانشگاهی)", "عکس ۳×۴ با پس‌زمینه روشن"], "desc": "ثبت‌نام، ویرایش و دریافت کارت ورود به جلسه"}, {"id": "s15", "cat": "edu", "title": "ثبت‌نام کنکور کارشناسی ارشد", "time": "زمان ثبت‌نام", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "تصویر مدرک کارشناسی", "ریز نمرات"], "desc": "ثبت‌نام و انتخاب کد رشته"}, {"id": "s16", "cat": "edu", "title": "ثبت‌نام آزمون دکتری", "time": "زمان ثبت‌نام", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "تصویر مدرک کارشناسی ارشد", "مقاله و سابقه"], "desc": "ثبت‌نام و بارگذاری مدارک"}, {"id": "s17", "cat": "edu", "title": "ثبت‌نام دانشگاه بدون کنکور (سوابق تحصیلی)", "time": "زمان ثبت‌نام", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "ریز نمرات دیپلم"], "desc": "ثبت‌نام و انتخاب رشته"}, {"id": "s18", "cat": "edu", "title": "ثبت‌نام پیام نور / علمی کاربردی / آزاد", "time": "زمان ثبت‌نام", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "تصویر دیپلم"], "desc": "ثبت‌نام و پرداخت شهریه اولیه"}, {"id": "s19", "cat": "edu", "title": "ثبت‌نام آزمون‌های استخدامی دستگاه‌های اجرایی", "time": "زمان ثبت‌نام", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "تصویر مدرک تحصیلی", "عکس ۳×۴"], "desc": "ثبت‌نام، بارگذاری مدارک و پرداخت"}, {"id": "s20", "cat": "edu", "title": "ثبت‌نام آزمون نظام مهندسی", "time": "زمان ثبت‌نام", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "پروانه اشتغال / مدرک مهندسی"], "desc": "ثبت‌نام و انتخاب رشته"}, {"id": "s21", "cat": "edu", "title": "ثبت‌نام آزمون وکالت و قضاوت", "time": "زمان ثبت‌نام", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "تصویر مدرک حقوق"], "desc": "ثبت‌نام و پرداخت هزینه"}, {"id": "s22", "cat": "edu", "title": "بازدید و انتخاب رشته کنکور", "time": "۲ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "کارنامه کنکور"], "desc": "مشاوره، انتخاب ۱۵۰ کد رشته و ثبت نهایی"}, {"id": "s23", "cat": "edu", "title": "ثبت‌نام آزمون‌های زبان (تولیمو، MSRT)", "time": "زمان ثبت‌نام", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "ثبت‌نام و رزرو حوزه"}, {"id": "s24", "cat": "edu", "title": "سیستم گلستان / سجاد (امور دانشجویی)", "time": "همان روز", "docs": ["شماره دانشجویی", "رمز عبور"], "desc": "انتخاب واحد، رفع نقص، دریافت گواهی"}, {"id": "s25", "cat": "edu", "title": "ثبت‌نام خوابگاه و وام دانشجویی", "time": "۱ روز کاری", "docs": ["شماره دانشجویی", "تصویر کارت ملی"], "desc": "ثبت درخواست خوابگاه و وام"}, {"id": "s26", "cat": "edu", "title": "ثبت‌نام و خرید کتب درسی", "time": "همان روز", "docs": ["کد ملی دانش‌آموز", "کد مدرسه"], "desc": "ثبت‌نام و پرداخت"}, {"id": "s27", "cat": "law", "title": "ثبت دادخواست و شکواییه آنلاین (خدمات قضایی)", "time": "۱ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "متن شکایت / مدارک پرونده"], "desc": "تنظیم و ثبت الکترونیک در سامانه قضایی"}, {"id": "s28", "cat": "law", "title": "گواهی عدم سوءپیشینه (کیفری)", "time": "۲ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "عکس ۳×۴", "محل دقیق سکونت"], "desc": "ثبت درخواست و پیگیری صدور"}, {"id": "s29", "cat": "law", "title": "معافیت تحصیلی و امور نظام وظیفه", "time": "۱ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "گواهی اشتغال به تحصیل"], "desc": "ثبت درخواست معافیت و پیگیری"}, {"id": "s30", "cat": "law", "title": "استعلام خلافی خودرو", "time": "همان روز", "docs": ["شماره پلاک", "شماره VIN"], "desc": "استعلام و چاپ برگه خلافی"}, {"id": "s31", "cat": "law", "title": "پرداخت جریمه رانندگی", "time": "همان روز", "docs": ["شماره پلاک / شماره قبض"], "desc": "پرداخت آنلاین و دریافت رسید"}, {"id": "s32", "cat": "law", "title": "رزرو نوبت تعویض پلاک", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "کارت خودرو", "بیمه‌نامه معتبر"], "desc": "رزرو نوبت مراکز تعویض پلاک"}, {"id": "s33", "cat": "law", "title": "رزرو نوبت گذرنامه و تعویض گذرنامه", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "عکس بیومتریک", "پایان خدمت / معافیت"], "desc": "نوبت‌دهی و تشکیل پرونده"}, {"id": "s34", "cat": "law", "title": "ثبت‌نام سامانه ابلاغ الکترونیک (پیگیری)", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "فعال‌سازی و آموزش مشاهده ابلاغیه"}, {"id": "s35", "cat": "fin", "title": "افتتاح حساب و احراز هویت آنلاین بانکی", "time": "۱ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "شماره همراه به نام", "عکس سلفی"], "desc": "احراز هویت غیرحضوری و افتتاح حساب"}, {"id": "s36", "cat": "fin", "title": "ثبت‌نام وام ازدواج و فرزندآوری", "time": "۲ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "عقدنامه / شناسنامه فرزند", "گواهی عدم دریافت وام"], "desc": "ثبت درخواست در سامانه تسهیلات قرض‌الحسنه"}, {"id": "s37", "cat": "fin", "title": "استعلام سابقه بیمه و ریز پرداخت", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "دریافت سابقه و چاپ آن"}, {"id": "s38", "cat": "fin", "title": "صدور بیمه شخص ثالث و بدنه", "time": "همان روز", "docs": ["کارت خودرو", "گواهینامه", "تصویر کارت ملی"], "desc": "استعلام و صدور آنلاین بیمه‌نامه"}, {"id": "s39", "cat": "fin", "title": "بیمه تکمیلی و عمر (ثبت‌نام)", "time": "۱ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "ثبت درخواست و پیگیری صدور"}, {"id": "s40", "cat": "fin", "title": "مدیریت و فروش سهام عدالت", "time": "۱ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "کد بورسی"], "desc": "فعال‌سازی و آموزش فروش سهام"}, {"id": "s41", "cat": "fin", "title": "احراز هویت صرافی و ارز دیجیتال", "time": "۱ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "عکس سلفی با مدرک"], "desc": "احراز هویت و ثبت‌نام در صرافی داخلی"}, {"id": "s42", "cat": "fin", "title": "راه‌اندازی درگاه پرداخت و کارتخوان", "time": "۵ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "مجوز کسب‌وکار / اینماد"], "desc": "ثبت درخواست درگاه و پیگیری"}, {"id": "s43", "cat": "fin", "title": "مشاوره، تشکیل پرونده و پرداخت مالیات", "time": "۱ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "کد اقتصادی / مالیاتی"], "desc": "ورود به سامانه مالیاتی و پرداخت"}, {"id": "s44", "cat": "biz", "title": "ثبت شرکت (سامانه ثبت شرکت‌ها)", "time": "۳ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "آگهی تقاضای ثبت", "صورتجلسه", "آدرس شرکت"], "desc": "ثبت‌نام، بارگذاری اساس‌نامه و پیگیری"}, {"id": "s45", "cat": "biz", "title": "ثبت علامت تجاری و مالکیت صنعتی", "time": "۳ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "نمونه علامت", "نمونه آگهی"], "desc": "ثبت درخواست و پیگیری"}, {"id": "s46", "cat": "biz", "title": "صدور و تمدید کارت بازرگانی", "time": "۵ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "کارت بازرگانی قبلی", "گواهی مالیاتی"], "desc": "ثبت درخواست و پیگیری اتاق بازرگانی"}, {"id": "s47", "cat": "biz", "title": "اخذ نماد اعتماد الکترونیکی (اینماد)", "time": "۳ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "مجوز کسب‌وکار", "لینک سایت / شبا"], "desc": "ثبت درخواست و پیگیری در سامانه"}, {"id": "s48", "cat": "biz", "title": "مجوز کسب‌وکار (درگاه ملی مجوزها)", "time": "۳ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "آدرس محل کسب", "کد پستی"], "desc": "ثبت درخواست و پیگیری مجوز"}, {"id": "s49", "cat": "biz", "title": "تنظیم قرارداد و اسناد رسمی (تایپ)", "time": "۱ روز کاری", "docs": ["متن قرارداد", "اطلاعات طرفین"], "desc": "تنظیم، تایپ و چاپ اسناد"}, {"id": "s50", "cat": "car", "title": "ثبت‌نام خودرو (سامانه یکپارچه تخصیص)", "time": "زمان ثبت‌نام", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "گواهی عدم تخصیص قبلی"], "desc": "ثبت‌نام و پرداخت پیش‌پرداخت"}, {"id": "s51", "cat": "car", "title": "استعلام و پیگیری تخصیص خودرو", "time": "همان روز", "docs": ["کد رهگیری / کد ملی"], "desc": "پیگیری وضعیت نوبت و تخصیص"}, {"id": "s52", "cat": "car", "title": "نوبت معاینه فنی و سرويس", "time": "همان روز", "docs": ["کارت خودرو", "شماره پلاک"], "desc": "رزرو نوبت مراکز معاینه فنی"}, {"id": "s53", "cat": "print", "title": "پرینت سیاه و سفید (هر برگ A4)", "time": "همان روز", "docs": [], "desc": "پرینت فوری از فایل شما"}, {"id": "s54", "cat": "print", "title": "پرینت رنگی (هر برگ A4)", "time": "همان روز", "docs": [], "desc": "پرینت رنگی با کیفیت بالا"}, {"id": "s55", "cat": "print", "title": "اسکن مدارک (هر برگ)", "time": "همان روز", "docs": [], "desc": "اسکن با فرمت PDF یا تصویر"}, {"id": "s56", "cat": "print", "title": "کپی و تکثیر (هر برگ)", "time": "همان روز", "docs": [], "desc": "فتوکپی از مدارک شما"}, {"id": "s57", "cat": "print", "title": "تایپ فارسی (هر صفحه)", "time": "۱ روز کاری", "docs": ["تصویر دست‌نویس / فایل"], "desc": "تایپ مرتب و صفحه‌آرایی"}, {"id": "s58", "cat": "print", "title": "لمینیت کارت و مدارک", "time": "همان روز", "docs": [], "desc": "روکش حرارتی ضد آب"}, {"id": "s59", "cat": "print", "title": "صحافی و شومیز", "time": "۱ روز کاری", "docs": [], "desc": "صحافی رشته‌ای یا چسب گرم"}, {"id": "s60", "cat": "print", "title": "چاپ کارت ویزیت (بسته ۱۰۰ عددی)", "time": "۲ روز کاری", "docs": ["طرح یا اطلاعات تماس"], "desc": "چاپ دیجیتال گلاسه"}, {"id": "s61", "cat": "print", "title": "چاپ عکس (قطعه ۱۰×۱۵)", "time": "همان روز", "docs": ["فایل عکس"], "desc": "چاپ عکس با کیفیت لابراتوار"}, {"id": "s62", "cat": "travel", "title": "رزرو بلیت اتوبوس", "time": "همان روز", "docs": ["تصویر کارت ملی مسافر"], "desc": "رزرو و صدور بلیت"}, {"id": "s63", "cat": "travel", "title": "رزرو بلیت قطار", "time": "همان روز", "docs": ["تصویر کارت ملی مسافر"], "desc": "رزرو و صدور بلیت"}, {"id": "s64", "cat": "travel", "title": "رزرو بلیت هواپیما", "time": "همان روز", "docs": ["تصویر کارت ملی مسافر"], "desc": "استعلام نرخ و صدور بلیت"}, {"id": "s65", "cat": "travel", "title": "رزرو هتل و اقامتگاه", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "رزرو و دریافت واچر"}, {"id": "s66", "cat": "travel", "title": "رزرو نوبت سفارت / پیگیری ویزا", "time": "۱ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "تصویر گذرنامه", "عکس بیومتریک"], "desc": "رزرو نوبت سفارتخانه"}, {"id": "s67", "cat": "travel", "title": "ثبت‌نام عتبات عالیات و حج", "time": "۱ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "تصویر گذرنامه"], "desc": "ثبت‌نام کاروان و پیگیری"}, {"id": "s68", "cat": "digital", "title": "پرداخت قبوض (آب، برق، گاز، تلفن)", "time": "همان روز", "docs": ["شماره قبض / پرداخت"], "desc": "پرداخت آنلاین و دریافت رسید"}, {"id": "s69", "cat": "digital", "title": "شارژ سیم‌کارت و بسته اینترنت", "time": "همان روز", "docs": ["شماره موبایل"], "desc": "شارژ مستقیم و بسته دیتا"}, {"id": "s70", "cat": "digital", "title": "ثبت‌نام اینترنت ADSL و فیبر", "time": "۲ روز کاری", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "شماره تلفن ثابت", "کد پستی"], "desc": "ثبت‌نام و پیگیری نصب"}, {"id": "s71", "cat": "digital", "title": "خرید سیم‌کارت و احراز هویت", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود", "عکس سلفی"], "desc": "ثبت‌نام و احراز هویت سیم‌کارت"}, {"id": "s72", "cat": "digital", "title": "ساخت ایمیل و اکانت / بازیابی رمز", "time": "همان روز", "docs": ["شماره موبایل"], "desc": "ساخت و بازیابی حساب کاربری"}, {"id": "s73", "cat": "digital", "title": "نصب ویندوز و نرم‌افزار", "time": "۱ روز کاری", "docs": [], "desc": "نصب ویندوز، آفیس و نرم‌افزارهای کاربردی"}, {"id": "s74", "cat": "digital", "title": "بازیابی اطلاعات حذف‌شده", "time": "۲ روز کاری", "docs": [], "desc": "ریکاوری فایل از حافظه و فلش"}, {"id": "s75", "cat": "digital", "title": "پشتیبانی کلاس آنلاین و وبینار", "time": "همان روز", "docs": [], "desc": "راه‌اندازی اسکای‌روم، ادوبی کانکت و ..."}, {"id": "s76", "cat": "study", "title": "ثبت‌نام مدارس و سامانه همگام/سیدا", "time": "۱ روز کاری", "docs": ["کد ملی دانش‌آموز", "شناسنامه"], "desc": "ثبت‌نام، انتقالی و پیگیری"}, {"id": "s77", "cat": "study", "title": "ثبت‌نام دوره‌های آموزشی و مهارتی", "time": "همان روز", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "ثبت‌نام در دوره و پرداخت"}, {"id": "s78", "cat": "study", "title": "رزومه‌نویسی و ثبت‌نام کاریابی", "time": "۱ روز کاری", "docs": ["سابقه کاری", "مدرک تحصیلی"], "desc": "تنظیم رزومه حرفه‌ای و ثبت در سامانه"}, {"id": "s79", "cat": "study", "title": "ثبت‌نام آزمون فنی‌وحرفه‌ای", "time": "زمان ثبت‌نام", "docs": ["تصویر کارت ملی (پشت و رو)", "تصویر شناسنامه", "شماره همراه به نام خود"], "desc": "ثبت‌نام و پرداخت"}]};
+const CATS = DATA.cats, SERVICES = DATA.services;
+
+/* =======================================================================
+   ۳) ابزارها
+   ======================================================================= */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.prototype.slice.call(r.querySelectorAll(s));
+const faNum = v => String(v).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[+d]);
+const money = n => faNum(Number(n || 0).toLocaleString("en-US"));
+const catOf = id => CATS.filter(c => c.id === id)[0] || { name: "عمومی", icon: "•" };
+const catName = id => catOf(id).name;
+const STORE = {
+  get(k, d) { try { const v = localStorage.getItem("cn_" + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem("cn_" + k, JSON.stringify(v)); } catch (e) {} }
+};
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const sBy = id => SERVICES.filter(s => s.id === id)[0];
+
+/* ---------- قیمت‌ها: پیش‌فرض + بازنویسی دستی/اینترنتی ---------- */
+let PRICES = Object.assign({}, PRICE_DEFAULTS);
+(function loadPrices() {
+  const over = STORE.get("prices", null);
+  if (over && typeof over === "object") {
+    Object.keys(over).forEach(k => {
+      const v = over[k];
+      const amt = Array.isArray(v) ? v[0] : v;
+      if (typeof amt === "number" && amt >= 0) {
+        PRICES[k] = [amt, (PRICE_DEFAULTS[k] && PRICE_DEFAULTS[k][1]) || "ویرایش دستی"];
+      }
+    });
+  }
+})();
+function priceOf(id) {
+  const p = PRICES[id] || PRICE_DEFAULTS[id] || [0, "—"];
+  return Array.isArray(p) ? p[0] : p;
+}
+function noteOf(id) {
+  const p = PRICES[id] || PRICE_DEFAULTS[id] || [0, "—"];
+  return Array.isArray(p) ? p[1] : "";
+}
+function setPrice(id, amount, note) {
+  amount = Math.max(0, Math.round(Number(amount) || 0));
+  PRICES[id] = [amount, note || noteOf(id) || "ویرایش دستی"];
+  const over = STORE.get("prices", {});
+  over[id] = [amount, PRICES[id][1]];
+  STORE.set("prices", over);
+}
+function resetPrices() { STORE.set("prices", {}); PRICES = Object.assign({}, PRICE_DEFAULTS); }
+if (PRICE_SOURCE_URL) {
+  fetch(PRICE_SOURCE_URL).then(r => r.json()).then(remote => {
+    if (remote && typeof remote === "object") {
+      Object.keys(remote).forEach(k => {
+        const v = remote[k];
+        const amt = Array.isArray(v) ? v[0] : Number(v);
+        if (typeof amt === "number" && amt >= 0 && sBy(k)) setPrice(k, amt, "به‌روزرسانی خودکار");
+      });
+      renderAll();
+    }
+  }).catch(() => {});
+}
+
+/* =======================================================================
+   ۴) ناوبری
+   ======================================================================= */
+const SCREENS = ["home", "services", "order", "pay", "success", "mine", "track", "contact", "admin", "guide"];
+let currentScreen = "home";
+
+function paintIndicators() {
+  const seg = $("#segNav"), pill = $("#segPill");
+  if (seg && pill) {
+    const btn = seg.querySelector('[data-go="' + currentScreen + '"]');
+    if (btn) {
+      pill.style.width = btn.offsetWidth + "px";
+      pill.style.right = (seg.getBoundingClientRect().right - btn.getBoundingClientRect().right) + "px";
+    } else { pill.style.width = "0px"; }
+  }
+  const tb = $("#tabbar"), dot = $("#tabDot");
+  const b2 = tb && tb.querySelector('[data-go="' + currentScreen + '"]');
+  if (tb && dot && b2) {
+    dot.style.width = Math.max(20, b2.offsetWidth * 0.5) + "px";
+    dot.style.right = (tb.getBoundingClientRect().right - b2.getBoundingClientRect().right - b2.offsetWidth * 0.25) + "px";
+  } else if (dot) { dot.style.width = "0px"; }
+}
+
+/* =======================================================================
+   ۴-۱) کشوی منو
+   ======================================================================= */
+function openDrawer() {
+  document.body.classList.add("drawer-open");
+  const b = $("#menuBtn"); if (b) b.setAttribute("aria-expanded", "true");
+  const f = $("#drawer") && $("#drawer").querySelector("[data-go],[data-close]");
+  if (f) f.focus();
+}
+function closeDrawer() {
+  document.body.classList.remove("drawer-open");
+  const b = $("#menuBtn"); if (b) b.setAttribute("aria-expanded", "false");
+}
+if ($("#menuBtn")) $("#menuBtn").addEventListener("click", openDrawer);
+document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDrawer(); });
+
+function go(id) {
+  if (SCREENS.indexOf(id) === -1) id = "home";
+  currentScreen = id;
+  $$(".screen").forEach(s => s.classList.toggle("active", s.id === id));
+  $$("[data-go]").forEach(b => {
+    if (b.dataset.go === id) b.setAttribute("aria-current", "page");
+    else b.removeAttribute("aria-current");
+  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (id === "track") renderSteps();
+  if (id === "mine") renderMine();
+  if (id === "contact") applyOwner();
+  if (id === "admin") { fillOwnerForm(); renderAdmin(); renderPricesPanel(); }
+  paintIndicators();
+  setTimeout(paintIndicators, 350);
+  try { history.replaceState(null, "", "#" + id); } catch (e) { location.hash = id; }
+}
+
+document.addEventListener("click", function (e) {
+  if (!e.target.closest("#catPanel,#catToggle")) closeCats();
+  if (e.target.closest("[data-close]")) { closeDrawer(); closeGate(); return; }
+
+  const nav = e.target.closest("[data-go]");
+  if (nav) {
+    e.preventDefault();
+    if (nav.dataset.go === "admin" && !adminUnlocked) { closeDrawer(); openGate(); return; }
+    closeDrawer(); go(nav.dataset.go); return;
+  }
+
+  const mini = e.target.closest("[data-code]");
+  if (mini) { $("#trackInput").value = mini.dataset.code; go("track"); $("#trackBtn").click(); return; }
+
+  const pick = e.target.closest("[data-pick]");
+  if (pick) { openOrder(pick.dataset.pick); return; }
+
+  const tile = e.target.closest("[data-tile]");
+  if (tile) { activeCat = tile.dataset.tile; query = ""; const q = $("#q"); if (q) q.value = ""; renderChips(); renderServices(); go("services"); return; }
+
+  const tag = e.target.closest("[data-tag]");
+  if (tag) {
+    query = tag.dataset.tag; activeCat = "all";
+    const qi = $("#q"); if (qi) qi.value = query;
+    renderChips(); renderServices(); go("services"); return;
+  }
+
+  const tab = e.target.closest("[data-tab]");
+  if (tab) {
+    const name = tab.dataset.tab;
+    $$("#tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === name)));
+    $("#panelOrders").classList.toggle("hide", name !== "orders");
+    $("#panelPrices").classList.toggle("hide", name !== "prices");
+    $("#panelRate").classList.toggle("hide", name !== "rate");
+    if (name === "prices") renderPricesPanel();
+  }
+});
+
+/* =======================================================================
+   ۵) کارت خدمت
+   ======================================================================= */
+function card(s) {
+  const pr = priceOf(s.id);
+  return '<article class="card">' +
+    '<div class="card-top"><span class="mdl s" aria-hidden="true"><i>' + catOf(s.cat).icon + '</i></span>' +
+      '<span class="catname">' + catName(s.cat) + '</span></div>' +
+    '<h3>' + s.title + '</h3>' +
+    '<div class="metas">' +
+      '<span class="pill">⏱ ' + s.time + '</span>' +
+      (s.docs.length ? '<span class="pill warn">📎 ' + faNum(s.docs.length) + ' مدرک</span>'
+                     : '<span class="pill">بدون مدرک</span>') +
+    '</div>' +
+    '<div class="card-foot">' +
+      '<span class="price"><b>' + money(pr) + '</b><small>تومان · حق‌الزحمه</small></span>' +
+      '<button class="btn btn-sm btn-p" data-pick="' + s.id + '">سفارش</button>' +
+    '</div>' +
+  '</article>';
+}
+
+/* =======================================================================
+   ۶) صفحهٔ خانه
+   ======================================================================= */
+function renderHome() {
+  const ri = $("#rateInfo");
+  if (ri) ri.textContent = "مبنای قیمت‌ها: " + RATE_INFO.title + " — شمارهٔ " + RATE_INFO.number;
+  const ri2 = $("#rateInfo2");
+  if (ri2) ri2.textContent = "نرخنامهٔ مرجع این برنامه: " + RATE_INFO.title + "، شمارهٔ " + RATE_INFO.number + " (سال " + RATE_INFO.year + ").";
+
+  const tags = ["ثنا", "کنکور", "اینماد", "گذرنامه", "وام ازدواج", "چاپ", "بیمه شخص ثالث", "یارانه"];
+  const qt = $("#quickTags");
+  if (qt) qt.innerHTML = tags.map(t => '<button data-tag="' + t + '">' + t + '</button>').join("");
+
+  /* --- کارهای پرکاربرد: فشرده، یک لمس تا سفارش --- */
+  const quickIds = ["s1", "s13", "s27", "s30", "s34", "s53", "s35", "s25", "s41", "s57"];
+  const qr = $("#quickRail");
+  if (qr) qr.innerHTML = quickIds.map(sBy).filter(Boolean).map(function (s) {
+    return '<button class="qbtn" data-pick="' + s.id + '">' +
+      '<span class="mdl s" aria-hidden="true"><i>' + catOf(s.cat).icon + '</i></span>' +
+      '<span class="t"><b>' + s.title + '</b><small>' + money(priceOf(s.id)) + ' تومان</small></span>' +
+      '<span class="tl">›</span></button>';
+  }).join("");
+  const cc = $("#catCount");
+  if (cc) cc.textContent = faNum(SERVICES.length) + " خدمت در " + faNum(CATS.length) + " دسته";
+
+  /* --- کاشی دسته‌بندی‌ها --- */
+  const pairs = [["#22407F", "#0F7F79"], ["#0F7F79", "#15A096"], ["#BE8A2C", "#E0AA4A"], ["#9E3B34", "#BE8A2C"], ["#5B4FB0", "#22407F"], ["#0E6E6C", "#0F7F79"]];
+  const ct = $("#catTiles");
+  if (ct) ct.innerHTML = CATS.map((c, i) => {
+    const n = SERVICES.filter(s => s.cat === c.id).length;
+    const pr = pairs[i % pairs.length];
+    return '<button class="tile" data-tile="' + c.id + '" style="--c1:' + pr[0] + ';--c2:' + pr[1] + '">' +
+      '<span class="ring"><i>' + c.icon + '</i></span>' +
+      '<b>' + c.name + '</b>' +
+      '<small>' + faNum(n) + ' خدمت · از ' + money(minPriceOfCat(c.id)) + ' تومان</small>' +
+      '<span class="go">دیدن خدمات ›</span></button>';
+  }).join("");
+
+  /* --- پرتکرارها --- */
+  const popIds = ["s1", "s13", "s27", "s34", "s53", "s41"];
+  const pop = popIds.map(sBy).filter(Boolean);
+  const pbox = $("#popRail");
+  if (pbox) pbox.innerHTML = (pop.length ? pop : SERVICES.slice(0, 6)).map(card).join("");
+
+  /* --- پرسش‌های پرتکرار (در صفحهٔ راهنما) --- */
+  const faqs = [
+    ["قیمت‌ها از کجاست؟", "بر اساس نرخنامهٔ اتحادیهٔ صنف فناوران رایانهٔ تهران (" + RATE_INFO.number + "). مبالغ نرخنامه ریالی است و اینجا به تومان نمایش داده می‌شه. بندهای توافقی مثل ثبت شرکت رو خودت تعیین می‌کنی."],
+    ["مدارکم امن می‌مونه؟", "مدارک فقط برای همون سفارش استفاده می‌شه و بعد از تحویل و به درخواستت پاک می‌شه. آپلود رمزگذاری‌شده و دسترسی کارشناس محدوده."],
+    ["اگه سامانه‌ای هزینهٔ دولتی داشته باشه؟", "مبلغی که می‌بینی حق‌الزحمهٔ ماست. هزینه‌های دولتی جدا اعلام می‌شه و قبل از پرداخت ازت تأیید می‌گیریم."],
+    ["چقدر طول می‌کشه؟", "روی کارت هر خدمت زمان تقریبی نوشته شده. کارهای فوری مثل استعلام و پرینت همون روز انجام می‌شه."],
+    ["چطور سفارشم رو پیگیری کنم؟", "بعد از پرداخت یه کد مثل CN-4821 می‌گیری؛ از منو «پیگیری سفارش» وضعیت رو می‌بینی."]
+  ];
+  const fq = $("#faq");
+  if (fq) fq.innerHTML = faqs.map(f => '<details><summary>' + f[0] + '</summary><p>' + f[1] + '</p></details>').join("");
+}
+
+function minPriceOfCat(cat) {
+  const list = SERVICES.filter(s => s.cat === cat).map(s => priceOf(s.id));
+  return list.length ? Math.min.apply(null, list) : 0;
+}
+
+
+/* =======================================================================
+   ۶-۱) مشخصات صاحب کسب‌وکار در همهٔ صفحه‌ها
+   ======================================================================= */
+function owner() {
+  const saved = STORE.get("owner", null);
+  return Object.assign({}, OWNER, saved && typeof saved === "object" ? saved : {});
+}
+function applyOwner() {
+  const o = owner();
+  const setTx = function (sel, txt) { const el = $(sel); if (el) el.textContent = txt; };
+  setTx("#drOwner", o.name);
+  setTx("#drFootName", o.name);
+  setTx("#footOwner", o.name);
+  setTx("#footBrand", o.name);
+  setTx("#heroOwner", "مرکز خدمات اینترنتی " + o.name);
+  setTx("#ownName", o.name);
+  setTx("#ownDesc", "مرکز خدمات اینترنتی و کافی‌نت — " + o.hours);
+  setTx("#ownAddr", o.address);
+  setTx("#cHours", o.hours);
+  setTx("#sumOwner", o.name);
+  setTx("#succOwner", o.name);
+  $$(".brand b").forEach(function (b) { b.textContent = o.name; });
+  document.title = o.name + " — سفارش خدمات اینترنتی";
+
+  const ph = $("#cPhone"), pt = $("#cPhoneTxt");
+  if (pt) pt.textContent = faNum(o.phone);
+  if (ph) ph.href = "tel:" + o.phone;
+
+  const wa = $("#cWa"), wt = $("#cWaTxt");
+  if (wt) wt.textContent = "+" + o.whatsapp;
+  if (wa) wa.href = "https://wa.me/" + o.whatsapp;
+
+  const tg = $("#cTg"), tt = $("#cTgTxt");
+  const tgTxt = o.telegram ? "@" + o.telegram : o.name + " (پیام‌رسان داخلی)";
+  if (tt) tt.textContent = tgTxt;
+  if (tg) tg.href = o.telegram ? "https://t.me/" + o.telegram : "https://wa.me/" + o.whatsapp;
+}
+function waLink(text) {
+  return "https://wa.me/" + owner().whatsapp + "?text=" + encodeURIComponent(text);
+}
+function lastOrder() {
+  const all = STORE.get("orders", []);
+  return all.length ? all[0] : null;
+}
+function orderText(o, withMine) {
+  if (!o) return "سلام، یک سفارش می‌خواهم ثبت کنم.";
+  return "سلام " + owner().name + "\n" +
+    "کد پیگیری: " + o.code + "\n" +
+    "خدمت: " + o.service + "\n" +
+    "مبلغ: " + money(o.total) + " تومان\n" +
+    (withMine ? "نام: " + o.name + "\n" : "");
+}
+
+/* =======================================================================
+   ۶-۲) سفارش‌های من
+   ======================================================================= */
+function renderMine() {
+  const box = $("#mineBox"); if (!box) return;
+  const all = STORE.get("orders", []);
+  const cnt = $("#mineCount");
+  if (cnt) cnt.textContent = all.length ? faNum(all.length) + " سفارش" : "خالی";
+  if (!all.length) {
+    box.innerHTML = '<p class="empty">هنوز سفارشی ثبت نکردی. از «خدمات» یکی انتخاب کن.</p>';
+    return;
+  }
+  box.innerHTML = all.map(function (o) {
+    return '<button class="mini" data-code="' + o.code + '">' +
+      '<span><b>' + esc(o.service) + '</b><small>' + o.code + ' · ' + o.date + ' · ' + money(o.total) + ' تومان</small></span>' +
+      '<span class="st">' + o.status + '</span></button>';
+  }).join("");
+}
+
+/* =======================================================================
+   ۶-۳) قفل پیشخوان مدیریت
+   ======================================================================= */
+let adminUnlocked = STORE.get("adminOk", false) === true;
+function openGate() {
+  const g = $("#adminGate"); if (!g) return;
+  $("#gatePass").value = "";
+  $("#gateErr").classList.add("hide");
+  g.classList.add("open");
+  setTimeout(function () { $("#gatePass").focus(); }, 60);
+}
+function closeGate() { const g = $("#adminGate"); if (g) g.classList.remove("open"); }
+function unlockAdmin() { adminUnlocked = true; STORE.set("adminOk", true); closeGate(); toast("خوش آمدی 👋"); }
+
+$("#gateOk").addEventListener("click", function () {
+  const p = $("#gatePass").value;
+  if (p === owner().adminPass) { unlockAdmin(); }
+  else { $("#gateErr").classList.remove("hide"); $("#gateErr").textContent = "⚠ رمز اشتباه است."; }
+});
+$("#gatePass").addEventListener("keydown", function (e) { if (e.key === "Enter") $("#gateOk").click(); });
+
+/* =======================================================================
+   ۶-۴) دکمه‌های واتس‌اپ
+   ======================================================================= */
+if ($("#waSend")) $("#waSend").addEventListener("click", function () {
+  const o = lastOrder();
+  window.open(waLink(orderText(o, true)), "_blank");
+});
+if ($("#callOwner")) $("#callOwner").addEventListener("click", function () {
+  window.location.href = "tel:" + owner().phone;
+});
+if ($("#cWaSend")) $("#cWaSend").addEventListener("click", function () {
+  const nm = $("#cMsgName").value.trim();
+  const msg = $("#cMsg").value.trim();
+  if (!msg) { toast("اول سفارشت رو توضیح بده"); return; }
+  window.open(waLink("سلام " + owner().name + "\n" + (nm ? "نام: " + nm + "\n" : "") + "سفارش: " + msg), "_blank");
+});
+
+/* =======================================================================
+   ۶-۵) پنل «مشخصات من»
+   ======================================================================= */
+function fillOwnerForm() {
+  const o = owner();
+  const map = { oName: o.name, oPhone: o.phone, oWa: o.whatsapp, oHours: o.hours, oAddr: o.address, oPass: o.adminPass };
+  Object.keys(map).forEach(function (k) { const el = $("#" + k); if (el) el.value = map[k]; });
+}
+
+/* =======================================================================
+   ۷) کاتالوگ خدمات
+   ======================================================================= */
+let activeCat = "all", query = "";
+
+function renderChips() {
+  const box = $("#chips"); if (!box) return;
+  const all = '<button class="chip" data-cat="all" aria-pressed="' + (activeCat === "all") + '">همه (' + faNum(SERVICES.length) + ')</button>';
+  box.innerHTML = all + CATS.map(c => {
+    const n = SERVICES.filter(s => s.cat === c.id).length;
+    return '<button class="chip" data-cat="' + c.id + '" aria-pressed="' + (activeCat === c.id) + '">' +
+      c.icon + ' ' + c.name + ' (' + faNum(n) + ')</button>';
+  }).join("");
+  const lit = $("#catSelTxt"), nm = $("#catSelName");
+  if (lit && nm) {
+    if (activeCat === "all") { lit.textContent = "📂 همه دسته‌ها"; nm.textContent = ""; nm.classList.add("hide"); }
+    else { lit.textContent = catOf(activeCat).icon; nm.textContent = catName(activeCat); nm.classList.remove("hide"); }
+  }
+}
+
+/* --- کشویی دسته‌بندی --- */
+function openCats() { const p = $("#catPanel"); if (p) p.classList.remove("hide"); const t = $("#catToggle"); if (t) t.setAttribute("aria-expanded", "true"); }
+function closeCats() { const p = $("#catPanel"); if (p) p.classList.add("hide"); const t = $("#catToggle"); if (t) t.setAttribute("aria-expanded", "false"); }
+function toggleCats() { const p = $("#catPanel"); if (!p) return; (p.classList.contains("hide") ? openCats() : closeCats()); }
+
+function renderServices() {
+  const grid = $("#svcGrid"); if (!grid) return;
+  const q = query.trim();
+  const list = SERVICES.filter(s =>
+    (activeCat === "all" || s.cat === activeCat) &&
+    (!q || (s.title + " " + s.desc + " " + catName(s.cat)).indexOf(q) !== -1)
+  );
+  grid.innerHTML = list.map(card).join("");
+  const emp = $("#svcEmpty"); if (emp) emp.classList.toggle("hide", list.length > 0);
+  const cnt = $("#svcCount");
+  if (cnt) cnt.textContent = faNum(list.length) + " خدمت از " + faNum(SERVICES.length) + " خدمت";
+}
+
+/* =======================================================================
+   ۸) فرم سفارش
+   ======================================================================= */
+let current = null, docsDone = {};
+
+function openOrder(id) {
+  const s = sBy(id); if (!s) return;
+  current = s; docsDone = {};
+  $("#ordTitle").textContent = s.title;
+  $("#ordSub").textContent = catName(s.cat) + " · زمان تقریبی: " + s.time + " · حق‌الزحمه: " + money(priceOf(s.id)) + " تومان";
+  $("#docList").innerHTML = s.docs.length
+    ? s.docs.map((d, i) =>
+        '<li><span class="n">' + faNum(i + 1) + '</span><span class="txt">' + d +
+        '<small>فرمت مجاز: JPG، PNG یا PDF — حداکثر ۵ مگابایت</small>' +
+        '<label class="up" data-up="' + i + '">📎 انتخاب فایل<input type="file" accept="image/*,.pdf"></label>' +
+        '</span></li>').join("")
+    : '<li><span class="n">✓</span><span class="txt">این خدمت مدرک خاصی لازم نداره.<small>فقط اطلاعات تماس و توضیح سفارش رو پر کن.</small></span></li>';
+  $("#formErr").classList.add("hide");
+  renderSummary();
+  go("order");
+}
+
+function cityFee() {
+  const el = $("#fCity");
+  const c = (el && el.value || "").trim();
+  if (c === "تهران") return 0;
+  if (c === "اردبیل") return 45000;
+  return 30000;
+}
+
+function renderSummary() {
+  if (!current) return;
+  const ship = cityFee(), fee = priceOf(current.id);
+  const box = $("#sumBox");
+  if (box) box.innerHTML =
+    '<div class="sumline"><span>خدمت</span><span style="max-width:56%;text-align:left">' + current.title + '</span></div>' +
+    '<div class="sumline"><span>زمان تقریبی</span><span>' + current.time + '</span></div>' +
+    '<div class="sumline"><span>مدارک لازم</span><span>' + faNum(current.docs.length) + ' مورد</span></div>' +
+    '<div class="sumline"><span>حق‌الزحمهٔ خدمت</span><span>' + money(fee) + ' تومان</span></div>' +
+    '<div class="sumline"><span>پیک / پست مدارک</span><span>' + money(ship) + ' تومان</span></div>' +
+    '<div class="sumline total"><span>جمع کل</span><span>' + money(fee + ship) + ' تومان</span></div>' +
+    '<div style="margin-top:.5rem;font-size:.76rem;color:var(--muted)">سند قیمت: ' + esc(noteOf(current.id)) + '</div>';
+  const left = $("#docsLeft");
+  if (left && current.docs.length) {
+    const n = current.docs.length - Object.keys(docsDone).length;
+    left.textContent = n > 0 ? "(" + faNum(n) + " مورد مونده)" : "(همه انتخاب شد ✓)";
+  }
+}
+
+$("#docList").addEventListener("change", function (e) {
+  const inp = e.target;
+  if (!inp.files || !inp.files[0]) return;
+  const wrap = inp.closest("[data-up]"); if (!wrap) return;
+  docsDone[wrap.dataset.up] = inp.files[0].name;
+  wrap.classList.add("done");
+  wrap.innerHTML = "✓ " + esc(inp.files[0].name.slice(0, 24)) + " (انتخاب شد)";
+  renderSummary();
+});
+$("#fCity").addEventListener("input", renderSummary);
+
+$("#payBtn").addEventListener("click", function () {
+  if (!current) { go("services"); return; }
+  const name = $("#fName").value.trim();
+  const phone = $("#fPhone").value.replace(/\s|-/g, "");
+  const nat = $("#fNat").value.trim();
+  const errs = [];
+  if (name.length < 3) errs.push("نام و نام خانوادگی رو کامل بنویس.");
+  if (!/^09\d{9}$/.test(phone)) errs.push("شمارهٔ موبایل باید با ۰۹ شروع شه و ۱۱ رقم باشه.");
+  if (!/^\d{10}$/.test(nat)) errs.push("کد ملی باید ۱۰ رقم باشه.");
+  if (current.docs.length && Object.keys(docsDone).length < current.docs.length) {
+    errs.push("هنوز " + faNum(current.docs.length - Object.keys(docsDone).length) + " مدرک انتخاب نشده.");
+  }
+  const box = $("#formErr");
+  if (errs.length) {
+    box.classList.remove("hide");
+    box.innerHTML = "⚠ " + errs.join("<br>⚠ ");
+    box.scrollIntoView({ block: "center", behavior: "smooth" });
+    return;
+  }
+  box.classList.add("hide");
+  renderPay(); go("pay");
+});
+
+/* =======================================================================
+   ۹) پرداخت
+   ======================================================================= */
+function renderPay() {
+  if (!current) return;
+  const ship = cityFee(), fee = priceOf(current.id);
+  $("#paySvc").textContent = current.title;
+  $("#paySvc2").textContent = current.title;
+  $("#payFee").textContent = money(fee) + " تومان";
+  $("#payShip").textContent = money(ship) + " تومان";
+  $("#payTotal").textContent = money(fee + ship) + " تومان";
+}
+
+$("#doPay").addEventListener("click", function () {
+  if (!current) { go("services"); return; }
+  const card = $("#cardNo").value.replace(/\D/g, "");
+  const cvv = $("#cardCvv").value.trim(), otp = $("#otp").value.trim();
+  const errBox = $("#payErr");
+  if (card.length < 16 || cvv.length < 3 || otp.length < 4) {
+    errBox.classList.remove("hide");
+    errBox.textContent = "⚠ اطلاعات پرداخت ناقصه: شمارهٔ کارت ۱۶ رقم، CVV و رمز پویا لازمه.";
+    return;
+  }
+  errBox.classList.add("hide");
+  const ship = cityFee(), fee = priceOf(current.id);
+  const code = "CN-" + Math.floor(1000 + Math.random() * 9000);
+  const order = {
+    code: code, name: $("#fName").value.trim(), phone: $("#fPhone").value.trim(),
+    nat: $("#fNat").value.trim(), city: $("#fCity").value.trim() || "ثبت نشده",
+    service: current.title, cat: current.cat, price: fee, ship: ship, total: fee + ship,
+    note: $("#fNote").value.trim(),
+    pay: (document.querySelector("input[name=pay]:checked") || {}).value || "-",
+    status: "ثبت شد", date: new Date().toLocaleDateString("fa-IR")
+  };
+  const all = STORE.get("orders", []);
+  all.unshift(order); STORE.set("orders", all);
+  $("#codeOut").textContent = code;
+  toast("✅ سفارش ثبت شد — کد: " + code);
+  ["fName", "fPhone", "fNat", "fCity", "fNote"].forEach(function (id) { $("#" + id).value = ""; });
+  current = null;
+  go("success");
+});
+
+/* =======================================================================
+   ۱۰) پیگیری
+   ======================================================================= */
+const STATUSES = ["ثبت شد", "در حال بررسی مدارک", "در انتظار مدارک", "در حال انجام", "انجام شد", "تحویل داده شد"];
+const STATUS_SUB = ["سفارش در سامانه ثبت شد", "کارشناس مدارک رو بررسی می‌کنه", "اگر مدرکی ناقص باشه اینجا می‌مونه", "در حال انجام سفارش", "کار تمومه، نتیجه آماده‌ست", "تحویل به مشتری"];
+
+function renderSteps(cur) {
+  const box = $("#stepList"); if (!box) return;
+  const idx = cur ? STATUSES.indexOf(cur) : -1;
+  box.innerHTML = STATUSES.map(function (s, i) {
+    const cls = !cur ? "" : (i < idx ? "done" : i === idx ? "now" : "");
+    return '<li class="' + cls + '"><b>' + s + '</b><small>' + STATUS_SUB[i] + '</small></li>';
+  }).join("");
+}
+
+$("#trackBtn").addEventListener("click", function () {
+  const code = $("#trackInput").value.trim().toUpperCase();
+  const out = $("#trackOut"), all = STORE.get("orders", []);
+  if (!code) { out.className = "empty"; out.textContent = "یه کد پیگیری بنویس."; renderSteps(); return; }
+  const o = all.filter(x => String(x.code).toUpperCase() === code)[0];
+  if (!o) { out.className = "empty"; out.textContent = "سفارشی با این کد پیدا نشد. کد رو مثل CN-4821 وارد کن."; renderSteps(); return; }
+  out.className = "";
+  out.innerHTML =
+    '<div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:.6rem">' +
+      '<div><div style="color:var(--muted);font-size:.78rem">خدمت</div><b>' + esc(o.service) + '</b></div>' +
+      '<div><div style="color:var(--muted);font-size:.78rem">وضعیت</div><b style="color:var(--firouzeh)">' + o.status + '</b></div>' +
+    '</div>' +
+    '<div class="sumline"><span>نام مشتری</span><span>' + esc(o.name) + '</span></div>' +
+    '<div class="sumline"><span>شهر</span><span>' + esc(o.city) + '</span></div>' +
+    '<div class="sumline"><span>مبلغ پرداختی</span><span>' + money(o.total) + ' تومان</span></div>' +
+    '<div class="sumline"><span>روش پرداخت</span><span>' + esc(o.pay) + '</span></div>' +
+    '<div class="sumline"><span>تاریخ ثبت</span><span>' + o.date + '</span></div>';
+  renderSteps(o.status);
+});
+$("#trackInput").addEventListener("keydown", function (e) { if (e.key === "Enter") $("#trackBtn").click(); });
+
+/* =======================================================================
+   ۱۱) مدیریت — سفارش‌ها
+   ======================================================================= */
+function renderAdmin() {
+  const all = STORE.get("orders", []);
+  const rev = all.reduce((a, b) => a + (b.total || 0), 0);
+  const kpi = $("#kpis");
+  if (kpi) kpi.innerHTML =
+    '<div class="kpi"><span>کل سفارش‌ها</span><b>' + faNum(all.length) + '</b></div>' +
+    '<div class="kpi"><span>در جریان</span><b>' + faNum(all.filter(o => ["ثبت شد", "در حال بررسی مدارک", "در انتظار مدارک", "در حال انجام"].indexOf(o.status) !== -1).length) + '</b></div>' +
+    '<div class="kpi"><span>تحویل‌شده</span><b>' + faNum(all.filter(o => ["انجام شد", "تحویل داده شد"].indexOf(o.status) !== -1).length) + '</b></div>' +
+    '<div class="kpi"><span>جمع مبلغ (تومان)</span><b>' + money(rev) + '</b></div>';
+  const body = $("#adminBody");
+  if (body) body.innerHTML = all.map(function (o, i) {
+    return '<tr><td><b>' + o.code + '</b></td>' +
+      '<td>' + esc(o.name) + '<br><small style="color:var(--muted)">' + esc(o.phone) + '</small></td>' +
+      '<td>' + esc(o.service) + '</td><td>' + money(o.total) + '</td>' +
+      '<td><select data-st="' + i + '">' + STATUSES.map(s => '<option' + (s === o.status ? " selected" : "") + '>' + s + '</option>').join("") + '</select></td>' +
+      '<td>' + o.date + '</td></tr>';
+  }).join("");
+  const em = $("#adminEmpty"); if (em) em.classList.toggle("hide", all.length > 0);
+}
+
+$("#adminBody").addEventListener("change", function (e) {
+  const sel = e.target.closest("[data-st]"); if (!sel) return;
+  const all = STORE.get("orders", []);
+  all[+sel.dataset.st].status = sel.value;
+  STORE.set("orders", all);
+  toast("وضعیت به‌روز شد: " + sel.value);
+  renderAdmin(); renderMine();
+});
+
+$("#seedBtn").addEventListener("click", function () {
+  const samples = [
+    { name: "زهرا محمدی", phone: "09121110000", sid: "s13", status: "در حال انجام" },
+    { name: "علی رضایی", phone: "09131234567", sid: "s27", status: "انجام شد" },
+    { name: "مریم حسینی", phone: "09901234567", sid: "s54", status: "تحویل داده شد" },
+    { name: "حسین قاسمی", phone: "09011112222", sid: "s47", status: "در انتظار مدارک" }
+  ];
+  const all = STORE.get("orders", []);
+  samples.forEach(function (s, i) {
+    const svc = sBy(s.sid) || { title: "خدمت", cat: "" };
+    all.push({
+      code: "CN-" + (1000 + i), name: s.name, phone: s.phone, nat: "0000000000", city: "تهران",
+      service: svc.title, cat: svc.cat, price: priceOf(s.sid), ship: 0, total: priceOf(s.sid),
+      note: "", pay: "درگاه بانکی (زرین‌پال)", status: s.status,
+      date: new Date().toLocaleDateString("fa-IR")
+    });
+  });
+  STORE.set("orders", all); renderAdmin(); renderMine(); toast("سفارش‌های نمونه اضافه شد");
+});
+
+$("#clearBtn").addEventListener("click", function () {
+  STORE.set("orders", []); renderAdmin(); renderMine(); toast("همهٔ سفارش‌ها پاک شد");
+});
+
+/* =======================================================================
+   ۱۲) مدیریت — ویرایش قیمت‌ها
+   ======================================================================= */
+let priceQuery = "";
+function renderPricesPanel() {
+  const body = $("#priceBody"); if (!body) return;
+  const q = priceQuery.trim();
+  const list = SERVICES.filter(s => !q || (s.title + " " + catName(s.cat)).indexOf(q) !== -1);
+  body.innerHTML = list.map(s => {
+    const cur = priceOf(s.id);
+    const changed = (PRICE_DEFAULTS[s.id] && PRICE_DEFAULTS[s.id][0] !== cur) ? '<span class="pill warn" style="margin-inline-start:.4rem">تغییر کرده</span>' : "";
+    return '<tr><td>' + s.title + changed + '</td><td>' + catName(s.cat) + '</td>' +
+      '<td><input class="pin" type="number" min="0" step="1000" data-pr="' + s.id + '" value="' + cur + '"></td>' +
+      '<td style="font-size:.78rem;color:var(--muted)">' + esc(noteOf(s.id)) + '</td></tr>';
+  }).join("");
+}
+$("#priceBody").addEventListener("change", function (e) {
+  const inp = e.target.closest("[data-pr]"); if (!inp) return;
+  setPrice(inp.dataset.pr, inp.value);
+  toast("قیمت ذخیره شد");
+  renderPricesPanel(); renderServices(); renderHome();
+});
+$("#priceSearch").addEventListener("input", function (e) { priceQuery = e.target.value; renderPricesPanel(); });
+
+$("#expBtn").addEventListener("click", function () {
+  const out = {};
+  SERVICES.forEach(s => { out[s.id] = { title: s.title, amount: priceOf(s.id), source: noteOf(s.id) }; });
+  const payload = { rate: RATE_INFO, generated: new Date().toISOString(), prices: out };
+  const blob = new Blob([JSON.stringify(payload, null, 1)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "cafenet-prices.json";
+  document.body.appendChild(a); a.click(); a.remove();
+  toast("فایل قیمت‌ها دانلود شد");
+});
+
+$("#impBtn").addEventListener("click", function () { $("#impFile").click(); });
+$("#impFile").addEventListener("change", function (e) {
+  const f = e.target.files && e.target.files[0]; if (!f) return;
+  const fr = new FileReader();
+  fr.onload = function () {
+    try {
+      const j = JSON.parse(fr.result);
+      const src = j.prices || j;
+      let n = 0;
+      Object.keys(src).forEach(function (k) {
+        if (!sBy(k)) return;
+        const v = src[k];
+        const amt = (v && typeof v === "object") ? v.amount : v;
+        const note = (v && typeof v === "object") ? v.source : null;
+        if (typeof amt === "number") { setPrice(k, amt, note); n++; }
+      });
+      renderPricesPanel(); renderServices(); renderHome();
+      toast(faNum(n) + " قیمت به‌روز شد");
+    } catch (err) { toast("❌ فایل نامعتبر است"); }
+  };
+  fr.readAsText(f);
+  e.target.value = "";
+});
+
+$("#resetBtn").addEventListener("click", function () {
+  resetPrices(); renderPricesPanel(); renderServices(); renderHome();
+  toast("قیمت‌ها به نرخنامهٔ پیش‌فرض برگشت");
+});
+
+/* ---------- ذخیرهٔ مشخصات و خروج از پیشخوان ---------- */
+if ($("#oSave")) $("#oSave").addEventListener("click", function () {
+  const v = {
+    name: $("#oName").value.trim() || OWNER.name,
+    phone: $("#oPhone").value.trim() || OWNER.phone,
+    whatsapp: $("#oWa").value.replace(/\D/g, "") || OWNER.whatsapp,
+    hours: $("#oHours").value.trim() || OWNER.hours,
+    address: $("#oAddr").value.trim() || OWNER.address,
+    adminPass: $("#oPass").value.trim() || OWNER.adminPass
+  };
+  const keep = owner();
+  if (!v.telegram) v.telegram = keep.telegram;
+  STORE.set("owner", v);
+  applyOwner(); toast("مشخصات ذخیره شد");
+});
+if ($("#lockBtn")) $("#lockBtn").addEventListener("click", function () {
+  adminUnlocked = false; STORE.set("adminOk", false);
+  toast("از پیشخوان خارج شدی"); go("home");
+});
+
+/* =======================================================================
+   ۱۲-۵) اسکرول‌هوشمند نوار فیلتر
+   ======================================================================= */
+let lastY = 0, ticking = false;
+window.addEventListener("scroll", function () {
+  if (ticking) return;
+  ticking = true;
+  window.requestAnimationFrame(function () {
+    const y = window.scrollY || 0;
+    const bar = $("#svcFilters");
+    if (bar) {
+      const inServices = $("#services").classList.contains("active");
+      if (inServices && y > 150 && y > lastY + 6) bar.classList.add("up");
+      else if (y < lastY - 6 || y < 120) bar.classList.remove("up");
+    }
+    lastY = y; ticking = false;
+  });
+}, { passive: true });
+
+/* =======================================================================
+   ۱۳) جست‌وجو
+   ======================================================================= */
+$("#q").addEventListener("input", function (e) { query = e.target.value; renderServices(); });
+$("#chips").addEventListener("click", function (e) {
+  const c = e.target.closest("[data-cat]"); if (!c) return;
+  activeCat = c.dataset.cat; renderChips(); renderServices(); closeCats();
+});
+$("#catToggle").addEventListener("click", function (e) { e.stopPropagation(); toggleCats(); });
+$("#catPanel").addEventListener("click", function (e) { e.stopPropagation(); });
+$("#qHome").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    query = e.target.value; activeCat = "all";
+    const qi = $("#q"); if (qi) qi.value = query;
+    renderChips(); renderServices(); go("services");
+    const n = SERVICES.filter(s => !query.trim() || (s.title + " " + s.desc).indexOf(query.trim()) !== -1).length;
+    if (!n) toast("چیزی پیدا نشد — یه کلمهٔ دیگه امتحان کن");
+  }
+});
+$("#qHome").addEventListener("search", function (e) { if (!e.target.value) { } });
+
+/* =======================================================================
+   ۱۴) توست + ورود ملایم
+   ======================================================================= */
+function toast(msg) {
+  const box = $("#toast"); if (!box) return;
+  const t = document.createElement("div");
+  t.className = "toast"; t.textContent = msg;
+  box.appendChild(t);
+  setTimeout(function () { t.style.opacity = "0"; t.style.transition = "opacity .4s"; }, 2200);
+  setTimeout(function () { t.remove(); }, 2700);
+}
+
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(function (ents) {
+    ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+  $$(".rev").forEach(el => io.observe(el));
+} else {
+  $$(".rev").forEach(el => el.classList.add("in"));
+}
+
+/* =======================================================================
+   ۱۵) راه‌اندازی
+   ======================================================================= */
+function renderAll() { applyOwner(); renderHome(); renderChips(); renderServices(); renderPricesPanel(); renderAdmin(); renderMine(); }
+renderAll();
+renderSteps();
+window.addEventListener("resize", paintIndicators);
+window.addEventListener("load", paintIndicators);
+setTimeout(paintIndicators, 60);
+var startHash = (location.hash || "").replace("#", "");
+go(SCREENS.indexOf(startHash) !== -1 ? startHash : "home");
+
+</script>
+</body>
+</html>
